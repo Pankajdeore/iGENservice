@@ -9968,3 +9968,16 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Adjust spacing between items */
+  padding: 20px; /* Optional: adds padding around the grid */
+}
+
+@media (max-width: 768px) {
+  .grid-wrapper {
+      grid-template-columns: 1fr; /* Stack items on smaller screens */
+  }
+}
