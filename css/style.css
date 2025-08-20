@@ -9787,7 +9787,7 @@ h6,
 }
 
 .service-item {
-  height: 320px;
+  height: 380px;
   background: #F4F5F8;
   transition: .5s;
 }
@@ -9802,6 +9802,25 @@ h6,
 
 .service-item:hover h4 {
   color: #F4F5F8;
+}
+
+.services-subtext {
+    font-size: 1.55rem;
+}
+
+.btn-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-social:hover {
+    background: #007bff;
+    color: #fff !important;
+    border-color: #007bff !important;
 }
 
 .portfolio-item .portfolio-btn {
