@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coming Soon | iGEN</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="iGEN, Coming Soon, Under Development" name="keywords">
+    <meta content="This page is under development" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .coming-soon {
+            min-height: 100vh;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .coming-soon-content {
+            max-width: 800px;
+        }
+        .coming-soon-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }
+        .coming-soon-text {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        .coming-soon-icon {
+            font-size: 5rem;
+            color: #FFAA17;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .return-home {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            background: #FFAA17;
+            border-radius: 50px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .return-home:hover {
+            background: #FFAA17;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon">
+        <div class="coming-soon-content">
+            <img src="img/igenlogo.png" alt="iGEN Logo" style="height: 80px; margin-bottom: 2rem;">
+            <i class="fas fa-cogs coming-soon-icon"></i>
+            <h1 class="coming-soon-title">Coming Soon!</h1>
+            <p class="coming-soon-text">
+                We're working hard to bring you something amazing. This page is currently under development.
+                Please check back later for updates.
+            </p>
+            <a href="index.html" class="return-home">
+                <i class="fas fa-arrow-left mr-2"></i> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

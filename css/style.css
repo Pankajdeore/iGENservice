@@ -597,7 +597,6 @@ pre code {
 
 .container,
 .container-fluid,
-.container-test,
 .container-sm,
 .container-md,
 .container-lg,
@@ -607,16 +606,6 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.container-test
-{
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 4000px !important;
 }
 
 @media (min-width: 576px) {
@@ -1097,7 +1086,7 @@ pre code {
     max-width: 33.33333%;
   }
   .col-md-5 {
-    flex: 0 0 20%;
+    flex: 0 0 41.66667%;
     max-width: 41.66667%;
   }
   .col-md-6 {
@@ -3057,7 +3046,6 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
-  white-space: nowrap;
 }
 
 .dropdown-menu-left {
@@ -4049,7 +4037,6 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-item {
   margin-bottom: -1px;
-  white-space: nowrap;
 }
 
 .nav-tabs .nav-link {
@@ -4122,7 +4109,7 @@ input[type="button"].btn-block {
 }
 
 .navbar .container,
-.navbar .container-fluid, .container-test, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
+.navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4198,7 +4185,7 @@ input[type="button"].btn-block {
 
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
-  .navbar-expand-sm > .container-fluid, .container-test, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
+  .navbar-expand-sm > .container-fluid, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4220,7 +4207,7 @@ input[type="button"].btn-block {
     padding-left: 0.5rem;
   }
   .navbar-expand-sm > .container,
-  .navbar-expand-sm > .container-fluid, .container-test, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
+  .navbar-expand-sm > .container-fluid, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
     flex-wrap: nowrap;
   }
   .navbar-expand-sm .navbar-collapse {
@@ -4234,7 +4221,7 @@ input[type="button"].btn-block {
 
 @media (max-width: 767.98px) {
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid, .container-test, .navbar-expand-md > .container-sm, .navbar-expand-md > .container-md, .navbar-expand-md > .container-lg, .navbar-expand-md > .container-xl {
+  .navbar-expand-md > .container-fluid, .navbar-expand-md > .container-sm, .navbar-expand-md > .container-md, .navbar-expand-md > .container-lg, .navbar-expand-md > .container-xl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4256,7 +4243,7 @@ input[type="button"].btn-block {
     padding-left: 0.5rem;
   }
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid, .container-test ,.navbar-expand-md > .container-sm, .navbar-expand-md > .container-md, .navbar-expand-md > .container-lg, .navbar-expand-md > .container-xl {
+  .navbar-expand-md > .container-fluid, .navbar-expand-md > .container-sm, .navbar-expand-md > .container-md, .navbar-expand-md > .container-lg, .navbar-expand-md > .container-xl {
     flex-wrap: nowrap;
   }
   .navbar-expand-md .navbar-collapse {
@@ -4270,7 +4257,7 @@ input[type="button"].btn-block {
 
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid, .container-test, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
+  .navbar-expand-lg > .container-fluid, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4292,7 +4279,7 @@ input[type="button"].btn-block {
     padding-left: 0.5rem;
   }
   .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid, .container-test, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
+  .navbar-expand-lg > .container-fluid, .navbar-expand-lg > .container-sm, .navbar-expand-lg > .container-md, .navbar-expand-lg > .container-lg, .navbar-expand-lg > .container-xl {
     flex-wrap: nowrap;
   }
   .navbar-expand-lg .navbar-collapse {
@@ -4306,7 +4293,7 @@ input[type="button"].btn-block {
 
 @media (max-width: 1199.98px) {
   .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid, .container-test, .navbar-expand-xl > .container-sm, .navbar-expand-xl > .container-md, .navbar-expand-xl > .container-lg, .navbar-expand-xl > .container-xl {
+  .navbar-expand-xl > .container-fluid, .navbar-expand-xl > .container-sm, .navbar-expand-xl > .container-md, .navbar-expand-xl > .container-lg, .navbar-expand-xl > .container-xl {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4328,7 +4315,7 @@ input[type="button"].btn-block {
     padding-left: 0.5rem;
   }
   .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid, .container-test, .navbar-expand-xl > .container-sm, .navbar-expand-xl > .container-md, .navbar-expand-xl > .container-lg, .navbar-expand-xl > .container-xl {
+  .navbar-expand-xl > .container-fluid, .navbar-expand-xl > .container-sm, .navbar-expand-xl > .container-md, .navbar-expand-xl > .container-lg, .navbar-expand-xl > .container-xl {
     flex-wrap: nowrap;
   }
   .navbar-expand-xl .navbar-collapse {
@@ -4346,7 +4333,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-expand > .container,
-.navbar-expand > .container-fluid, .container-test, .navbar-expand > .container-sm, .navbar-expand > .container-md, .navbar-expand > .container-lg, .navbar-expand > .container-xl {
+.navbar-expand > .container-fluid, .navbar-expand > .container-sm, .navbar-expand > .container-md, .navbar-expand > .container-lg, .navbar-expand > .container-xl {
   padding-right: 0;
   padding-left: 0;
 }
@@ -4365,7 +4352,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-expand > .container,
-.navbar-expand > .container-fluid, .container-test, .navbar-expand > .container-sm, .navbar-expand > .container-md, .navbar-expand > .container-lg, .navbar-expand > .container-xl {
+.navbar-expand > .container-fluid, .navbar-expand > .container-sm, .navbar-expand > .container-md, .navbar-expand > .container-lg, .navbar-expand > .container-xl {
   flex-wrap: nowrap;
 }
 
@@ -9800,15 +9787,24 @@ h6,
 }
 
 .service-item {
-  position: relative;
-  height: 320px;
-  background: #F4F5F8;
-  transition: .5s;
-  text-align: center;
+  /* height: 380px;
+  
+  /* transition: .5s; */ 
+
+  /* background: #F4F5F8; */
+  transition: 
+        box-shadow 0.25s cubic-bezier(.4,2,.6,1), 
+        transform 0.22s cubic-bezier(.4,2,.6,1), 
+        border-color 0.22s;
+  border: 1.5px solid #ca8000;
 }
 
 .service-item:hover {
-  background: #222429;
+  /* background: #222429; */
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18), 0 1.5px 8px rgba(0,123,255,0.08);
+    transform: translateY(-10px) scale(1.03);
+    border-color: #ca8000;
+    z-index: 2;
 }
 
 .service-item h4 {
@@ -9817,6 +9813,25 @@ h6,
 
 .service-item:hover h4 {
   color: #F4F5F8;
+}
+
+.services-subtext {
+    font-size: 1.55rem;
+}
+
+.btn-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-social:hover {
+    background: #007bff;
+    color: #fff !important;
+    border-color: #007bff !important;
 }
 
 .portfolio-item .portfolio-btn {
@@ -9967,17 +9982,4 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 20px; /* Adjust spacing between items */
-  padding: 20px; /* Optional: adds padding around the grid */
-}
-
-@media (max-width: 768px) {
-  .grid-wrapper {
-      grid-template-columns: 1fr; /* Stack items on smaller screens */
-  }
 }
