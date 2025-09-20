@@ -1,13 +1,11 @@
+<!-- filepath: d:\iGENservice\coe\kubernetes.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>Digital Solutions | iGEN</title>
+    <title>Kubernetes COE - iGEN Services</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Digital Solutions, IT Services, iGEN" name="keywords">
-    <meta content="Empowering your business with digital transformation, automation, and customer-centric experiences." name="description">
-
+    <meta name="description" content="Platform engineering, GitOps, multi-cluster, and observability on Kubernetes.">
     <link href="../img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
@@ -15,10 +13,18 @@
     <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .tech-hero{background:linear-gradient(120deg,#FFAA17 0%,#ca8000 100%);color:#222;padding:80px 0 40px;text-align:center}
+        .tech-feature{background:#fff;border-radius:12px;padding:32px 24px;margin-bottom:32px;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:box-shadow .2s}
+        .tech-feature:hover{box-shadow:0 6px 32px rgba(0,0,0,.13)}
+        .tech-icon{font-size:2.5rem;color:#FFAA17;margin-bottom:18px}
+        .tech-section-title{font-weight:700;color:#222;margin-bottom:24px;letter-spacing:1px}
+        .tech-divider{width:60px;height:4px;background:#FFAA17;margin:0 auto 32px;border-radius:2px}
+        .tech-cta{background:#fff;color:#222;border-radius:8px;padding:32px 24px;text-align:center;margin-top:48px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+        .tech-cta .btn{font-size:1.15rem;padding:12px 36px;border-radius:25px}
+    </style>
 </head>
-
 <body>
-    <!-- Navbar Start -->
     <div class="container-fluid bg-white position-relative">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
             <a href="../index.html" class="navbar-brand text-secondary">
@@ -31,18 +37,17 @@
                 <div class="navbar-nav ml-auto py-0 pr-3 border-right">
                     <a href="../index.html" class="nav-item nav-link">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
-                            <a href="digital.html" class="dropdown-item active">Digital</a>
-                            <a href="devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
-                            <a href="managed-testing.html" class="dropdown-item">Managed Testing Services</a>
-                            <a href="sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
-                            <a href="cx-engineering.html" class="dropdown-item">CX Engineering</a>
-                            <a href="data-analytics.html" class="dropdown-item">Data Analytics</a>
+                            <a href="../services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
+                            <a href="../services/digital.html" class="dropdown-item">Digital</a>
+                            <a href="../services/devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
+                            <a href="../services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
+                            <a href="../services/sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
+                            <a href="../services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
+                            <a href="../services/data-analytics.html" class="dropdown-item">Data Analytics</a>
                         </div>
                     </div>
-                    <!-- ...other dropdowns as in your index.html... -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
                         <div class="dropdown-menu rounded-0 m-0">
@@ -50,109 +55,65 @@
                             <a href="../technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
                             <a href="../technology/security.html" class="dropdown-item">Security</a>
                             <a href="../technology/servicenow.html" class="dropdown-item">ServiceNow</a>
-                            <a href="../technology/iot.html" class="dropdown-item">Internet of Things (loT)</a>
-                            <a href="../technology/genai.html" class="dropdown-item">GenAl</a>
+                            <a href="../technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
+                            <a href="../technology/genai.html" class="dropdown-item">GenAI</a>
                             <a href="../technology/open-source.html" class="dropdown-item">Open Source</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COE</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">COE</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="../coe/enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
+                            <a href="enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
                             <!-- <a href="coe/testimonial.html" class="dropdown-item">Testimonial</a> -->
-                            <a href="../coe/storage.html" class="dropdown-item">Storage</a>
-                            <a href="../coe/data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
-                            <a href="../coe/networking-telecom.html" class="dropdown-item">Networking & Telecom</a>
-                            <a href="../coe/kubernetes.html" class="dropdown-item">Kubernetes</a>
-                            <a href="../coe/cloud.html" class="dropdown-item">Cloud</a>
+                            <a href="storage.html" class="dropdown-item">Storage</a>
+                            <a href="data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
+                            <a href="networking-telecom.html" class="dropdown-item">Networking & Telecom</a>
+                            <a href="kubernetes.html" class="dropdown-item active">Kubernetes</a>
+                            <a href="cloud.html" class="dropdown-item">Cloud</a>
                         </div>
                     </div>
-
-                    <a href="../about.html" class="nav-item nav-link active">About Us</a>
-                </div>
-                <div class="d-none d-lg-flex align-items-center pl-4">
-                    <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
-                    <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius: 25px;">
-                        Contact Us
-                    </a>
+                    <a href="../about.html" class="nav-item nav-link">About Us</a>
+                    <div class="d-none d-lg-flex align-items-center pl-4">
+                        <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
+                        <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius:25px;">Contact Us</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </div>
-    <!-- Navbar End -->
 
-    <!-- Hero Section -->
-    <div class="container-fluid bg-primary py-5 mb-5">
-        <div class="container text-center">
-            <h1 class="display-4 text-black mb-3">Digital Solutions</h1>
-            <p class="lead text-black-50 mb-0">Empowering your business with digital transformation, automation, and customer-centric experiences.</p>
+    <section class="tech-hero">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold mb-3">Kubernetes COE</h1>
+            <p class="lead mb-4" style="max-width:760px;margin:0 auto;">Secure, observable, and developer-friendly platforms powered by K8s.</p>
+            <a href="#solutions" class="btn btn-dark text-uppercase px-5 py-3">Explore Solutions</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container py-5">
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="../services-images/digital-transformation.jpg" alt="Digital Solutions" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4">Drive Digital Transformation</h2>
-                <p>
-                    iGEN helps organizations embrace digital technologies to streamline operations, enhance customer engagement, and unlock new revenue streams. Our digital solutions are tailored to your unique business needs, ensuring measurable impact and sustainable growth.
-                </p>
-                <ul class="list-unstyled mb-4">
-                    <li><i class="fa fa-check text-primary mr-2"></i> Digital Strategy & Roadmap</li>
-                    <li><i class="fa fa-check text-primary mr-2"></i> Process Automation & RPA</li>
-                    <li><i class="fa fa-check text-primary mr-2"></i> Customer Experience Platforms</li>
-                    <li><i class="fa fa-check text-primary mr-2"></i> Mobile & Web Applications</li>
-                    <li><i class="fa fa-check text-primary mr-2"></i> Cloud Migration & Integration</li>
-                    <li><i class="fa fa-check text-primary mr-2"></i> Data Analytics & Insights</li>
-                </ul>
-                <a href="../contact.html" class="btn btn-primary btn-lg px-5 py-3">Get a Digital Assessment</a>
-            </div>
-        </div>
+    <div class="container py-5" id="solutions">
+        <div class="tech-section-title text-center">Focus Areas</div>
+        <div class="tech-divider"></div>
         <div class="row">
-            <div class="col-lg-12">
-                <h3 class="mb-3">Benefits of Going Digital with iGEN</h3>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="bg-light rounded p-4 h-100 shadow-sm">
-                            <h5 class="text-primary mb-2"><i class="fa fa-rocket mr-2"></i>Faster Time-to-Market</h5>
-                            <p class="mb-0">Accelerate your product launches and adapt quickly to market changes with agile digital solutions.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="bg-light rounded p-4 h-100 shadow-sm">
-                            <h5 class="text-primary mb-2"><i class="fa fa-sync-alt mr-2"></i>Improved Efficiency</h5>
-                            <p class="mb-0">Automate repetitive tasks and optimize workflows to boost productivity and reduce costs.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="bg-light rounded p-4 h-100 shadow-sm">
-                            <h5 class="text-primary mb-2"><i class="fa fa-users mr-2"></i>Enhanced Customer Experience</h5>
-                            <p class="mb-0">Deliver seamless, personalized experiences across all digital touchpoints.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="bg-light rounded p-4 h-100 shadow-sm">
-                            <h5 class="text-primary mb-2"><i class="fa fa-chart-line mr-2"></i>Data-Driven Decisions</h5>
-                            <p class="mb-0">Leverage analytics and insights to make smarter, more informed business decisions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="../contact.html" class="btn btn-outline-primary btn-lg px-5 py-3">Start Your Digital Journey</a>
-                </div>
-            </div>
+            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-layer-group tech-icon"></i><h5>Platform Engineering</h5><p>Golden paths, self-service, and internal developer portals.</p></div></div>
+            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-code-branch tech-icon"></i><h5>GitOps</h5><p>ArgoCD/Flux, progressive delivery, policy-as-code.</p></div></div>
+            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-search tech-icon"></i><h5>Observability</h5><p>Metrics, logs, traces, and SLO management at scale.</p></div></div>
         </div>
     </div>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+    <div class="container">
+        <div class="tech-cta">
+            <h3 class="mb-3">Accelerate your Kubernetes adoption</h3>
+            <p class="mb-4">Blueprints for multi-cluster, multi-cloud, and regulated workloads.</p>
+            <a href="../contact.html" class="btn btn-primary font-weight-bold shadow">Request a Blueprint</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
         <div class="row pt-5">
             <!-- Logo & Social -->
             <div class="col-lg-3 col-md-6 mb-5">
-                <a href="../index.html" class="navbar-brand mb-3 d-block">
+                <a href="index.html" class="navbar-brand mb-3 d-block">
                     <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
                 </a>
                 <p class="mb-4" style="font-size: 1rem;">
@@ -205,7 +166,6 @@
             </div>
         </div>
     </div>
-    <!-- Footer End --> 
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -215,8 +175,6 @@
     <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="../lib/isotope/isotope.pkgd.min.js"></script>
     <script src="../lib/lightbox/js/lightbox.min.js"></script>
-    <script src="../mail/jqBootstrapValidation.min.js"></script>
-    <script src="../mail/contact.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

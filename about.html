@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>About Us - iGEN Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="iGEN is a first-year engineering company building modern cloud, data, and platform foundations. We’re seeking our first design partners and early hires.">
+
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap + Icons -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root { --brand:#FFAA17; --ink:#222; --muted:#6c757d; }
+        .pill { display:inline-block; padding:6px 12px; border-radius:999px; font-size:.85rem; font-weight:600; }
+        .badge-yo { background:#fff; color:var(--ink); border:1px solid rgba(0,0,0,.08); }
+        .brand-divider { width:64px; height:4px; background:var(--brand); border-radius:3px; }
+
+        /* Hero */
+        .about-hero {
+            background:
+                linear-gradient(115deg, rgba(255,170,23,.95) 0%, rgba(202,128,0,.95) 100%),
+                url("img/about-hero.jpg") center/cover no-repeat;
+            color:var(--ink);
+        }
+        .about-hero .hero-wrap { padding:90px 0 40px; }
+        .about-hero .hero-card {
+            background:#fff; border-radius:14px; padding:26px 22px;
+            box-shadow:0 6px 28px rgba(0,0,0,.12);
+        }
+        .about-hero .cta-btn { border-radius:28px; padding:12px 26px; }
+
+        /* Sections */
+        .section-title { font-weight:700; color:var(--ink); }
+        .feature-card {
+            background:#fff; border-radius:12px; padding:24px; height:100%;
+            box-shadow:0 2px 16px rgba(0,0,0,.07); transition:transform .15s ease, box-shadow .15s ease;
+        }
+        .feature-card:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,.12); }
+        .feature-icon { font-size:1.8rem; color:var(--brand); }
+
+        /* Roadmap */
+        .roadmap {
+            background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 16px rgba(0,0,0,.07);
+        }
+        .milestone { border-left:4px solid var(--brand); padding-left:16px; margin-bottom:18px; }
+        .milestone small { color:var(--muted); }
+
+        /* Signals */
+        .signal {
+            background:#fff; border-radius:12px; padding:22px; text-align:center;
+            box-shadow:0 2px 16px rgba(0,0,0,.07); height:100%;
+        }
+        .signal h3 { color:var(--ink); margin:0; font-weight:700; }
+        .signal p { color:var(--muted); margin:8px 0 0; }
+
+        /* Founders */
+        .leader-card {
+            background:#fff; border-radius:12px; padding:24px; text-align:center; height:100%;
+            box-shadow:0 2px 16px rgba(0,0,0,.07);
+        }
+        .leader-card img {
+            width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:12px;
+            box-shadow:0 2px 10px rgba(0,0,0,.12);
+        }
+        .leader-role { color:var(--muted); font-size:.95rem; }
+
+        /* CTAs */
+        .cta-panel {
+            background:#fff; border-radius:12px; padding:28px; text-align:center;
+            box-shadow:0 2px 16px rgba(0,0,0,.07);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="container-fluid bg-white position-relative">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand text-secondary">
+                <img src="img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
+                            <a href="services/digital.html" class="dropdown-item">Digital</a>
+                            <a href="services/devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
+                            <a href="services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
+                            <a href="services/sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
+                            <a href="services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
+                            <a href="services/data-analytics.html" class="dropdown-item">Data Analytics</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="technology/virtualization.html" class="dropdown-item">Virtualization</a>
+                            <a href="technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
+                            <a href="technology/security.html" class="dropdown-item">Security</a>
+                            <a href="technology/servicenow.html" class="dropdown-item">ServiceNow</a>
+                            <a href="technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
+                            <a href="technology/genai.html" class="dropdown-item">GenAI</a>
+                            <a href="technology/open-source.html" class="dropdown-item">Open Source</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COE</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="coe/enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
+                            <!-- <a href="coe/testimonial.html" class="dropdown-item">Testimonial</a> -->
+                            <a href="coe/storage.html" class="dropdown-item">Storage</a>
+                            <a href="coe/data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
+                            <a href="coe/networking-telecom.html" class="dropdown-item">Networking & Telecom</a>
+                            <a href="coe/kubernetes.html" class="dropdown-item">Kubernetes</a>
+                            <a href="coe/cloud.html" class="dropdown-item">Cloud</a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-item nav-link active">About Us</a>
+                </div>
+
+                <div class="d-none d-lg-flex align-items-center pl-4">
+                    <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
+                    <a href="contact.html" class="btn btn-primary px-4 py-2" style="border-radius:25px;">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <header class="about-hero">
+        <div class="container hero-wrap">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <span class="pill badge-yo mb-3"><i class="fas fa-flag mr-2"></i>Year One</span>
+                    <h1 class="display-4 font-weight-bold">Building dependable platforms from day one</h1>
+                    <p class="lead mt-3 mb-4">iGEN is a new engineering company focused on cloud, data, and platform foundations. We’re seeking our first design partners to co-create pragmatic solutions with fast feedback and measurable outcomes.</p>
+                    <div>
+                        <a href="#roadmap" class="btn btn-dark cta-btn mr-2">View Roadmap</a>
+                        <a href="contact.html" class="btn btn-primary cta-btn">Become a Design Partner</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-card">
+                        <h5 class="mb-2">What you can expect</h5>
+                        <ul class="mb-0 pl-3">
+                            <li>Clear scope and weekly demos</li>
+                            <li>Opinionated templates and guardrails</li>
+                            <li>Documentation-first delivery</li>
+                            <li>Transparent pricing and timelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- What we're building -->
+    <section class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title text-uppercase">What We’re Building</h2>
+            <div class="brand-divider mx-auto mt-2"></div>
+            <p class="text-muted mt-3 mb-0">Foundations you can run with a small team and scale with confidence.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-sitemap feature-icon mr-2"></i>
+                        <h5 class="mb-0">Cloud Platforms</h5>
+                    </div>
+                    <p class="mb-2 text-muted">Secure landing zones, policy-as-code, and automation for multi-account setups.</p>
+                    <span class="pill badge-yo">AWS | Azure | GCP</span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-database feature-icon mr-2"></i>
+                        <h5 class="mb-0">Data Foundations</h5>
+                    </div>
+                    <p class="mb-2 text-muted">Lakehouse-ready storage, streaming pipelines, and governance guardrails.</p>
+                    <span class="pill badge-yo">Delta | Kafka</span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-layer-group feature-icon mr-2"></i>
+                        <h5 class="mb-0">Developer Experience</h5>
+                    </div>
+                    <p class="mb-2 text-muted">Golden paths, GitOps, and internal portals to speed up secure delivery.</p>
+                    <span class="pill badge-yo">Kubernetes | ArgoCD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why iGEN now -->
+    <section class="container pb-4">
+        <div class="text-center mb-4">
+            <h2 class="section-title text-uppercase">Why iGEN Now</h2>
+            <div class="brand-divider mx-auto mt-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-hammer feature-icon mb-2"></i>
+                    <h6 class="mb-2">Pragmatic by Design</h6>
+                    <p class="mb-0 text-muted">We prioritize the smallest viable platform to achieve outcomes quickly.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-book feature-icon mb-2"></i>
+                    <h6 class="mb-2">Docs First</h6>
+                    <p class="mb-0 text-muted">Every deliverable includes runbooks, diagrams, and handover guides.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-user-check feature-icon mb-2"></i>
+                    <h6 class="mb-2">Transparent Delivery</h6>
+                    <p class="mb-0 text-muted">Weekly demos, clear scope, and visible risks—no surprises.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-lock feature-icon mb-2"></i>
+                    <h6 class="mb-2">Secure Defaults</h6>
+                    <p class="mb-0 text-muted">Guardrails and policies are part of the baseline, not add-ons.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-cubes feature-icon mb-2"></i>
+                    <h6 class="mb-2">Reusable Blocks</h6>
+                    <p class="mb-0 text-muted">Starters and modules you can reuse long after the engagement.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="feature-card">
+                    <i class="fas fa-seedling feature-icon mb-2"></i>
+                    <h6 class="mb-2">Early-Stage Attention</h6>
+                    <p class="mb-0 text-muted">You’ll work directly with the founders in Year One.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Roadmap (Year One) -->
+    <section id="roadmap" class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title text-uppercase">Open Roadmap — Year One</h2>
+            <div class="brand-divider mx-auto mt-2"></div>
+        </div>
+        <div class="roadmap">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="milestone">
+                        <h6 class="mb-1">Quarter 1</h6>
+                        <small>Foundations</small>
+                        <p class="mb-0">Baseline landing zone, IaC modules, and docs-first templates.</p>
+                    </div>
+                    <div class="milestone">
+                        <h6 class="mb-1">Quarter 2</h6>
+                        <small>Developer Experience</small>
+                        <p class="mb-0">GitOps pipelines, golden paths, and secure service scaffolds.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0">
+                    <div class="milestone">
+                        <h6 class="mb-1">Quarter 3</h6>
+                        <small>Data Foundations</small>
+                        <p class="mb-0">Lakehouse starter, CDC pipelines, and governance guardrails.</p>
+                    </div>
+                    <div class="milestone mb-0">
+                        <h6 class="mb-1">Quarter 4</h6>
+                        <small>Refine & Scale</small>
+                        <p class="mb-0">Hardened blueprints, cost controls, and operational playbooks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early-stage signals -->
+    <section class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title text-uppercase">Early-Stage Signals</h2>
+            <div class="brand-divider mx-auto mt-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="signal">
+                    <h3>2025</h3>
+                    <p>Founded</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="signal">
+                    <h3>Open</h3>
+                    <p>Design Partner Slots</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="signal">
+                    <h3>Starters</h3>
+                    <p>IaC, GitOps, Docs</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="signal">
+                    <h3>Weekly</h3>
+                    <p>Iteration Demos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="container pb-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title text-uppercase">Founders</h2>
+            <div class="brand-divider mx-auto mt-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="leader-card">
+                    <img src="img/team1.jpg" alt="Founder Photo">
+                    <h6 class="mb-1">Your Name</h6>
+                    <div class="leader-role mb-2">Product & Strategy</div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-primary mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-primary mx-2" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="leader-card">
+                    <img src="img/team2.jpg" alt="Founder Photo">
+                    <h6 class="mb-1">Your Name</h6>
+                    <div class="leader-role mb-2">Engineering</div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-primary mx-2"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="leader-card">
+                    <img src="img/team3.jpg" alt="Founder Photo">
+                    <h6 class="mb-1">Your Name</h6>
+                    <div class="leader-role mb-2">Delivery</div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-primary mx-2"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="leader-card">
+                    <img src="img/team4.jpg" alt="Founder Photo">
+                    <h6 class="mb-1">Your Name</h6>
+                    <div class="leader-role mb-2">Operations</div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-primary mx-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-primary mx-2"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual CTA: Design partners and Hiring -->
+    <section class="container pb-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="cta-panel h-100">
+                    <h4 class="mb-2">Become a Design Partner</h4>
+                    <p class="text-muted mb-3">Help shape our blueprints and get direct access to the founding team.</p>
+                    <a href="contact.html" class="btn btn-primary" style="border-radius:26px;">Apply Now</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="cta-panel h-100">
+                    <h4 class="mb-2">We’re Hiring Early Builders</h4>
+                    <p class="text-muted mb-3">Generalist engineers, platform specialists, and technical writers.</p>
+                    <a href="contact.html" class="btn btn-dark" style="border-radius:26px;">Send Your Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <!-- Logo & Social -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand mb-3 d-block">
+                    <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
+                </a>
+                <p class="mb-4" style="font-size: 1rem;">
+                    Empowering your business with innovative IT solutions and a partnership mindset.
+                </p>
+                <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+                <p class="mb-0">Mon - Fri: 9am - 6pm</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
+                <div class="d-flex flex-column">
+                    <a class="text-white-50 mb-2" href="../index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
+                    <a class="text-white-50 mb-2" href="../about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
+                    <a class="text-white-50 mb-2" href="../index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
+                    <!-- <a class="text-white-50 mb-2" href="pricing.html"><i class="fa fa-angle-right text-primary mr-2"></i>Pricing Plan</a> -->
+                    <a class="text-white-50 mb-2" href="../index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
+                    <a class="text-white-50" href="../contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                </div>
+            </div>     
+            <!-- Design Partner Program -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Design Partner Program</h4>
+                <p class="mb-4">We’re in Year One and opening a few design-partner slots to co-build platforms with direct founder access.</p>
+                <a href="../contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
+                <hr class="border-secondary my-4" style="opacity:.15;">
+                <h6 class="text-uppercase text-white mb-3">Careers</h6>
+                <p class="mb-3">We’re hiring early builders and platform specialists.</p>
+                <a href="../contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
+            </div>
+        </div>
+        <hr class="border-secondary" style="opacity:0.15;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-2 text-white-50">&copy; <a href="#" class="text-primary">iGEN</a>. All Rights Reserved.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

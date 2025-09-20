@@ -4507,6 +4507,11 @@ input[type="button"].btn-block {
   border-top: 0;
 }
 
+.footer-bg {
+    background: #23272b !important; /* or #1a2233 for deep blue */
+    color: #fff;
+}
+
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;

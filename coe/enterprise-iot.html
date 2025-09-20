@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Enterprise IoT Solutions - iGEN Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Enterprise IoT Solutions, Internet of Things, Smart Business Solutions" name="keywords">
+    <meta content="Transform your business with iGEN's comprehensive Enterprise IoT solutions. Connect devices, analyze data, and optimize operations." name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Page theme to match cloud-engineering -->
+    <style>
+        .tech-hero {
+            background: linear-gradient(120deg, #FFAA17 0%, #ca8000 100%);
+            color: #222;
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+        .tech-feature {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            transition: box-shadow 0.2s;
+        }
+        .tech-feature:hover {
+            box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+        }
+        .tech-icon {
+            font-size: 2.5rem;
+            color: #FFAA17;
+            margin-bottom: 18px;
+        }
+        .tech-section-title {
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+        .tech-divider {
+            width: 60px;
+            height: 4px;
+            background: #FFAA17;
+            margin: 0 auto 32px auto;
+            border-radius: 2px;
+        }
+        .tech-cta {
+            background: #fff;
+            color: #222;
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-top: 48px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+        .tech-cta .btn {
+            font-size: 1.15rem;
+            padding: 12px 36px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start (matched to cloud-engineering) -->
+    <div class="container-fluid bg-white position-relative">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="../index.html" class="navbar-brand text-secondary">
+                <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                    <a href="../index.html" class="nav-item nav-link">Home</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="../services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
+                            <a href="../services/digital.html" class="dropdown-item">Digital</a>
+                            <a href="../services/devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
+                            <a href="../services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
+                            <a href="../services/sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
+                            <a href="../services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
+                            <a href="../services/data-analytics.html" class="dropdown-item">Data Analytics</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="../technology/virtualization.html" class="dropdown-item">Virtualization</a>
+                            <a href="../technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
+                            <a href="../technology/security.html" class="dropdown-item">Security</a>
+                            <a href="../technology/servicenow.html" class="dropdown-item">ServiceNow</a>
+                            <a href="../technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
+                            <a href="../technology/genai.html" class="dropdown-item">GenAI</a>
+                            <a href="../technology/open-source.html" class="dropdown-item">Open Source</a>
+                        </div>
+                    </div>
+    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">COE</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="enterprise-iot.html" class="dropdown-item active">Enterprise IoT</a>
+                            <!-- <a href="coe/testimonial.html" class="dropdown-item">Testimonial</a> -->
+                            <a href="storage.html" class="dropdown-item">Storage</a>
+                            <a href="data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
+                            <a href="networking-telecom.html" class="dropdown-item">Networking & Telecom</a>
+                            <a href="kubernetes.html" class="dropdown-item">Kubernetes</a>
+                            <a href="cloud.html" class="dropdown-item">Cloud</a>
+                        </div>
+                    </div>
+                   
+                    <!-- About Us is now a single page -->
+                <a href="../about.html" class="nav-item nav-link">About Us</a>
+                
+                
+                <div class="d-none d-lg-flex align-items-center pl-4">
+                    <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
+                    <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius: 25px;">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Section (matched theme) -->
+    <section class="tech-hero">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold mb-3">Enterprise IoT Solutions</h1>
+            <p class="lead mb-4" style="max-width: 760px; margin: 0 auto;">
+                Connect, monitor, and optimize your operations with intelligent IoT. Leverage real-time data and automation to improve efficiency, reduce costs, and unlock new revenue streams.
+            </p>
+            <a href="#solutions" class="btn btn-dark text-uppercase px-5 py-3">Explore Solutions</a>
+        </div>
+    </section>
+
+    <!-- Overview Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="text-uppercase text-primary mb-3">Why Enterprise IoT?</h2>
+                    <h1 class="display-4 mb-4">Transform Your Business Operations</h1>
+                    <p class="mb-4">Enterprise IoT enables businesses to connect physical assets, collect real-time data, and make intelligent decisions. Our comprehensive IoT solutions help organizations reduce costs, improve efficiency, and create new revenue streams.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa fa-check text-primary mr-2"></i>Real-time monitoring and analytics</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary mr-2"></i>Predictive maintenance capabilities</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary mr-2"></i>Automated process optimization</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary mr-2"></i>Enhanced operational visibility</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="bg-light rounded p-4 text-center">
+                                <i class="fa fa-chart-line text-primary mb-3" style="font-size: 2rem;"></i>
+                                <h5>30% Cost Reduction</h5>
+                                <p class="mb-0">Average operational cost savings</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="bg-light rounded p-4 text-center">
+                                <i class="fa fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
+                                <h5>50% Faster</h5>
+                                <p class="mb-0">Decision-making speed</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-light rounded p-4 text-center">
+                                <i class="fa fa-shield-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                <h5>99.9% Uptime</h5>
+                                <p class="mb-0">System reliability</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-light rounded p-4 text-center">
+                                <i class="fa fa-users text-primary mb-3" style="font-size: 2rem;"></i>
+                                <h5>24/7 Support</h5>
+                                <p class="mb-0">Expert assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions Start -->
+    <div class="container-fluid py-5" id="solutions" style="background: #f8f9fa;">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h2 class="text-uppercase text-primary mb-2">Our IoT Solutions</h2>
+                <h1 class="display-4 text-uppercase mb-3">Enterprise IoT Services</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-industry text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Smart Manufacturing</h4>
+                        <p class="mb-4">Optimize production lines with connected sensors, predictive maintenance, and real-time quality control systems.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-building text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Smart Buildings</h4>
+                        <p class="mb-4">Intelligent building management systems for energy efficiency, security, and occupant comfort optimization.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-truck text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Fleet Management</h4>
+                        <p class="mb-4">Track vehicles, monitor driver behavior, optimize routes, and reduce fuel consumption with IoT-enabled fleet solutions.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-warehouse text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Supply Chain IoT</h4>
+                        <p class="mb-4">End-to-end visibility across your supply chain with intelligent tracking, monitoring, and predictive analytics.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-bolt text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Energy Management</h4>
+                        <p class="mb-4">Smart energy monitoring and management systems to reduce consumption and optimize sustainability initiatives.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm h-100 p-4 text-center">
+                        <i class="fa fa-heartbeat text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4 class="mb-3">Asset Health Monitoring</h4>
+                        <p class="mb-4">Continuous monitoring of critical assets with predictive maintenance to prevent downtime and extend equipment life.</p>
+                        <a href="../contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Solutions End -->
+
+    <!-- Process Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="text-uppercase text-primary mb-2">Our Process</h2>
+                <h1 class="display-4 mb-3">How We Implement IoT Solutions</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="text-white font-weight-bold" style="font-size: 2rem;">1</span>
+                        </div>
+                        <h5>Assessment & Planning</h5>
+                        <p>Evaluate your current infrastructure and identify IoT opportunities aligned with business objectives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="text-white font-weight-bold" style="font-size: 2rem;">2</span>
+                        </div>
+                        <h5>Design & Architecture</h5>
+                        <p>Create a comprehensive IoT architecture with device selection, connectivity, and data management strategies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="text-white font-weight-bold" style="font-size: 2rem;">3</span>
+                        </div>
+                        <h5>Implementation</h5>
+                        <p>Deploy IoT devices, establish connectivity, and integrate with existing systems for seamless operation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="text-white font-weight-bold" style="font-size: 2rem;">4</span>
+                        </div>
+                        <h5>Monitoring & Optimization</h5>
+                        <p>Continuous monitoring, analytics, and optimization to maximize ROI and improve performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Process End -->
+
+    <!-- CTA Start (matched style) -->
+    <div class="container">
+        <div class="tech-cta">
+            <h3 class="mb-3">Ready to Transform Your Enterprise with IoT?</h3>
+            <p class="mb-4">Get started with a free consultation and discover how Enterprise IoT can revolutionize your operations.</p>
+            <a href="../contact.html" class="btn btn-primary font-weight-bold shadow">Get Free Consultation</a>
+        </div>
+    </div>
+    <!-- CTA End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <!-- Logo & Social -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand mb-3 d-block">
+                    <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
+                </a>
+                <p class="mb-4" style="font-size: 1rem;">
+                    Empowering your business with innovative IT solutions and a partnership mindset.
+                </p>
+                <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+                <p class="mb-0">Mon - Fri: 9am - 6pm</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
+                <div class="d-flex flex-column">
+                    <a class="text-white-50 mb-2" href="../index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
+                    <a class="text-white-50 mb-2" href="../about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
+                    <a class="text-white-50 mb-2" href="../index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
+                    <!-- <a class="text-white-50 mb-2" href="pricing.html"><i class="fa fa-angle-right text-primary mr-2"></i>Pricing Plan</a> -->
+                    <a class="text-white-50 mb-2" href="../index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
+                    <a class="text-white-50" href="../contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                </div>
+            </div>     
+            <!-- Design Partner Program -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-uppercase text-white mb-4">Design Partner Program</h4>
+                <p class="mb-4">We’re in Year One and opening a few design-partner slots to co-build platforms with direct founder access.</p>
+                <a href="../contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
+                <hr class="border-secondary my-4" style="opacity:.15;">
+                <h6 class="text-uppercase text-white mb-3">Careers</h6>
+                <p class="mb-3">We’re hiring early builders and platform specialists.</p>
+                <a href="../contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
+            </div>
+        </div>
+        <hr class="border-secondary" style="opacity:0.15;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-2 text-white-50">&copy; <a href="#" class="text-primary">iGEN</a>. All Rights Reserved.</p>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
