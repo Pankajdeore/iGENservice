@@ -9920,6 +9920,17 @@ h6,
   background: #222429;
 }
 
+/* Normalize team card image heights */
+.team-carousel .team-item .position-relative {
+  height: 380px; /* adjust 320–420px to taste */
+}
+.team-carousel .team-item .position-relative img {
+  width: 100%;
+  height: 100% !important;   /* override img-fluid height:auto */
+  object-fit: cover;         /* crop to fill the box uniformly */
+  display: block;
+}
+
 .team-item .team-overlay {
   position: absolute;
   display: flex;
