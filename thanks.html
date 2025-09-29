@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thanks — iGEN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Auto-redirect after 5s (fallback if JS blocked) -->
+  <meta http-equiv="refresh" content="5; url=index.html">
+  <link href="img/favicon.ico" rel="icon">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    body { background:#f8f9fa; }
+    .card { border-radius:14px; box-shadow:0 6px 24px rgba(0,0,0,.08); }
+    .spinner { width:36px; height:36px; border:4px solid rgba(0,0,0,.1); border-top-color:#FFAA17; border-radius:50%; animation:spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="d-flex align-items-center justify-content-center" style="min-height:100vh;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10 col-md-8 col-lg-6">
+        <div class="card p-4 p-md-5 text-center">
+          <div class="mb-3 d-flex justify-content-center"><div class="spinner"></div></div>
+          <h3 class="mb-2">Thank you!</h3>
+          <p class="text-muted mb-4">Your message has been sent. We’ll get back to you soon.</p>
+          <p class="mb-1"><small>You’ll be redirected to the homepage in a few seconds.</small></p>
+          <a class="btn btn-primary mt-3" href="index.html">Go now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JS redirect (more reliable than meta refresh)
+    setTimeout(function () { window.location.href = 'index.html'; }, 5000);
+  </script>
+</body>
+</html>
