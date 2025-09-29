@@ -9798,34 +9798,50 @@ h6,
   }
 }
 
-.service-item {
-  /* height: 380px;
-  
-  /* transition: .5s; */ 
 
-  /* background: #F4F5F8; */
-  transition: 
-        box-shadow 0.25s cubic-bezier(.4,2,.6,1), 
-        transform 0.22s cubic-bezier(.4,2,.6,1), 
-        border-color 0.22s;
+
+/* Service card hover: ensure background flips and text inverts */
+.service-item {
+  background-color: #F4F5F8 !important; /* light grey */
+  transition:
+    background-color .35s ease,
+    box-shadow 0.25s cubic-bezier(.4,2,.6,1),
+    transform 0.22s cubic-bezier(.4,2,.6,1),
+    border-color 0.22s;
   border: 1.5px solid #ca8000;
 }
 
 .service-item:hover {
-  /* background: #222429; */
+  background-color: #222429 !important; /* dark */
   box-shadow: 0 12px 36px rgba(0,0,0,0.18), 0 1.5px 8px rgba(0,123,255,0.08);
-    transform: translateY(-10px) scale(1.03);
-    border-color: #ca8000;
-    z-index: 2;
+  transform: translateY(-10px) scale(1.03);
+  border-color: #ca8000;
+  z-index: 2;
 }
 
-.service-item h4 {
+/* Text color transition (match your markup: h5 + span.text-body + p) */
+.service-item h5,
+.service-item h4,
+.service-item p,
+.service-item .text-body {
+  transition: color .35s ease;
+}
+
+.service-item:hover h5,
+.service-item:hover h4,
+.service-item:hover p,
+.service-item:hover .text-body {
+  color: #F4F5F8 !important;
+}
+
+
+/* .service-item h4 {
   transition: .5s;
 }
 
 .service-item:hover h4 {
   color: #F4F5F8;
-}
+} */
 
 .services-subtext {
     font-size: 1.55rem;
