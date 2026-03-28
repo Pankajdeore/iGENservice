@@ -82,3 +82,47 @@
     });
 
 })(jQuery);
+
+/* ── Scroll Reveal — IntersectionObserver ───────────────────────────
+ *
+ * Runs outside the jQuery wrapper so it fires immediately on DOMContentLoaded
+ * and does not depend on jQuery being ready.
+ *
+ * Logic:
+ *  - Finds every element with class .reveal on the page.
+ *  - Watches each one with IntersectionObserver (threshold: 15% visible).
+ *  - Adds .revealed when the element crosses the threshold.
+ *  - Unobserves immediately after — animation plays once and stays put.
+ *  - Falls back gracefully: if IntersectionObserver is not supported
+ *    (very old browsers), all .reveal elements are made visible immediately.
+ * ─────────────────────────────────────────────────────────────────── */
+(function () {
+    var revealEls = document.querySelectorAll(".reveal");
+
+    /* Graceful fallback for browsers without IntersectionObserver */
+    if (!("IntersectionObserver" in window)) {
+        revealEls.forEach(function (el) {
+            el.classList.add("revealed");
+        });
+        return;
+    }
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("revealed");
+                    observer.unobserve(entry.target); /* fire once only */
+                }
+            });
+        },
+        {
+            threshold: 0.15,   /* trigger when 15% of element is visible */
+            rootMargin: "0px 0px -40px 0px" /* slight bottom offset — feels more intentional */
+        }
+    );
+
+    revealEls.forEach(function (el) {
+        observer.observe(el);
+    });
+})();

@@ -177,3 +177,55 @@
         gap: 6px;
     }
 }
+
+/* ─── Scroll reveal animations ───────────────────────────────────────
+ *
+ * How it works:
+ *   1. Elements start with .reveal (invisible, slightly offset).
+ *   2. IntersectionObserver in main.js adds .revealed when the element
+ *      enters the viewport.
+ *   3. CSS transition does the rest — no animation library needed.
+ *
+ * Variants:
+ *   .reveal-up    — fades in upward (default, used for headings + cards)
+ *   .reveal-left  — slides in from the left  (used for left columns)
+ *   .reveal-right — slides in from the right (used for right columns)
+ *   .reveal-fade  — pure fade, no movement   (used for full-width rows)
+ *
+ * Stagger:
+ *   Add data-delay="1" through data-delay="4" to siblings to cascade them.
+ * ─────────────────────────────────────────────────────────────────── */
+
+/* Base hidden state — applied before JS fires */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+    will-change: opacity, transform;
+}
+
+/* Direction variants — starting positions */
+.reveal-up    { transform: translateY(36px); }
+.reveal-left  { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-fade  { transform: none; }
+
+/* Revealed state — JS adds this class */
+.reveal.revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Stagger delays for sibling cards (data-delay="1" … "4") */
+.reveal[data-delay="1"] { transition-delay: 0.08s; }
+.reveal[data-delay="2"] { transition-delay: 0.18s; }
+.reveal[data-delay="3"] { transition-delay: 0.28s; }
+.reveal[data-delay="4"] { transition-delay: 0.38s; }
+
+/* Accessibility: respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
