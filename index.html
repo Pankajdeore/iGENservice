@@ -37,6 +37,10 @@
             <!-- FIX: backslash → forward slash -->
             <img src="img/igenlogo.png" alt="iGEN Logo" class="nav-logo" style="height:60px;">
         </a>
+        <!-- Dark mode toggle — mobile (visible when hamburger is shown) -->
+        <button id="darkToggleMobile" class="dm-toggle d-lg-none" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa fa-moon"></i>
+        </button>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -82,6 +86,10 @@
                 <a href="about.html" class="nav-item nav-link">About Us</a>
             </div>
             <div class="d-none d-lg-flex align-items-center pl-4">
+                <!-- Dark mode toggle — desktop -->
+                <button id="darkToggle" class="dm-toggle mr-3" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fa fa-moon"></i>
+                </button>
                 <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
                 <a href="contact.html" class="btn btn-primary px-4 py-2" style="border-radius: 25px;">Contact Us</a>
             </div>

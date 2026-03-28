@@ -305,3 +305,345 @@
         height: 44px !important;
     }
 }
+
+/* ─── Dark mode toggle button ────────────────────────────────────────
+ *
+ * .dm-toggle — the sun/moon pill button that lives in the navbar.
+ *   - Uses a CSS pill shape with an animated icon inside.
+ *   - Icon switches from moon (light mode) → sun (dark mode) via JS.
+ *   - Smooth rotate + fade animation on switch.
+ * ─────────────────────────────────────────────────────────────────── */
+.dm-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid #ccc;
+    background: transparent;
+    color: #555;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 1;
+}
+.dm-toggle:hover {
+    background: rgba(0, 123, 255, 0.08);
+    border-color: #007bff;
+    color: #007bff;
+    transform: rotate(12deg);
+}
+.dm-toggle:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+.dm-toggle .fa {
+    transition: transform 0.35s ease, opacity 0.2s ease;
+}
+.dm-toggle.spinning .fa {
+    transform: rotate(360deg);
+    opacity: 0.5;
+}
+
+/* ─── Dark mode — global variables and base overrides ────────────────
+ *
+ * Strategy: add class "dark-mode" to <body>.
+ * All overrides are scoped to body.dark-mode so they outrank Bootstrap
+ * and style.css without touching those files.
+ *
+ * Color palette used in dark mode:
+ *   --dm-bg        #121826   deep navy-dark  (page background)
+ *   --dm-surface   #1c2333   slightly lighter (card / section surface)
+ *   --dm-surface2  #242e42   input / hover surface
+ *   --dm-border    rgba(255,255,255,0.08)  subtle border
+ *   --dm-text      #e2e8f0   primary text
+ *   --dm-muted     #94a3b8   secondary / muted text
+ *   --dm-primary   #4d9fff   brighter blue for dark backgrounds
+ * ─────────────────────────────────────────────────────────────────── */
+
+/* Smooth color transition on all elements when mode switches */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+*, *::before, *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.25s ease, box-shadow 0.3s ease;
+}
+/* Don't transition transforms (breaks animations) */
+.reveal, .dm-toggle, .nav-logo, .btn, .back-to-top {
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                color 0.25s ease, box-shadow 0.3s ease,
+                opacity 0.65s ease, transform 0.65s ease, height 0.3s ease,
+                padding 0.3s ease;
+}
+
+/* ── Page body & typography ─────────────────────────────────────── */
+body.dark-mode {
+    background-color: #121826 !important;
+    color: #e2e8f0 !important;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #e2e8f0 !important;
+}
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span:not(.hero-typed):not(.nav-progress) {
+    color: #cbd5e1;
+}
+body.dark-mode a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand) {
+    color: #4d9fff;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────── */
+body.dark-mode #mainNav,
+body.dark-mode #mainNav.nav-sticky,
+body.dark-mode .navbar,
+body.dark-mode .navbar.bg-white,
+body.dark-mode nav.bg-white {
+    background-color: #1c2333 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+body.dark-mode .navbar-light .nav-link {
+    color: #cbd5e1 !important;
+}
+body.dark-mode .navbar-light .nav-link:hover,
+body.dark-mode .navbar-light .nav-link.active {
+    color: #4d9fff !important;
+}
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-brand.text-secondary {
+    color: #e2e8f0 !important;
+}
+body.dark-mode .navbar-toggler {
+    border-color: rgba(255,255,255,0.2) !important;
+}
+body.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+body.dark-mode .border-right {
+    border-right-color: rgba(255,255,255,0.1) !important;
+}
+
+/* ── Dropdown menus ──────────────────────────────────────────────── */
+body.dark-mode .dropdown-menu {
+    background-color: #1c2333 !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+}
+body.dark-mode .dropdown-item {
+    color: #cbd5e1 !important;
+    background-color: transparent !important;
+}
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+    background-color: rgba(77, 159, 255, 0.12) !important;
+    color: #4d9fff !important;
+}
+
+/* ── Dark mode toggle button itself ─────────────────────────────── */
+body.dark-mode .dm-toggle {
+    border-color: rgba(255,255,255,0.25);
+    color: #fcd34d; /* warm amber — sun colour */
+}
+body.dark-mode .dm-toggle:hover {
+    background: rgba(252,211,77,0.12);
+    border-color: #fcd34d;
+    color: #fcd34d;
+}
+
+/* ── Hero section ────────────────────────────────────────────────── */
+body.dark-mode .bg-primary,
+body.dark-mode .container-fluid.bg-primary {
+    background-color: #1a2540 !important;
+}
+body.dark-mode .hero-eyebrow { color: #94a3b8 !important; }
+body.dark-mode .hero-title   { color: #e2e8f0 !important; }
+body.dark-mode .hero-prefix  { color: #e2e8f0 !important; }
+body.dark-mode .hero-typed   { background: #4d9fff !important; color: #fff !important; }
+body.dark-mode .hero-cursor  { background: #4d9fff !important; }
+
+/* ── White / light surfaces (sections, cards) ────────────────────── */
+body.dark-mode .bg-white,
+body.dark-mode .contact-form.bg-white,
+body.dark-mode .service-item.bg-white {
+    background-color: #1c2333 !important;
+}
+body.dark-mode .bg-light,
+body.dark-mode .team-item .bg-light,
+body.dark-mode section,
+body.dark-mode [style*="background: #f8f9fa"],
+body.dark-mode [style*="background:#f8f9fa"] {
+    background-color: #121826 !important;
+}
+/* f8f9fa sections need targeting by inline style — JS handles this too */
+
+/* ── Text colours on dark cards ─────────────────────────────────── */
+body.dark-mode .text-body,
+body.dark-mode .text-dark {
+    color: #e2e8f0 !important;
+}
+body.dark-mode .text-muted,
+body.dark-mode .text-secondary {
+    color: #94a3b8 !important;
+}
+body.dark-mode .text-primary {
+    color: #4d9fff !important;
+}
+
+/* ── Borders ─────────────────────────────────────────────────────── */
+body.dark-mode .shadow,
+body.dark-mode .shadow-sm {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
+}
+body.dark-mode .rounded,
+body.dark-mode .rounded-sm {
+    border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────── */
+body.dark-mode .form-control,
+body.dark-mode .form-control.bg-light {
+    background-color: #242e42 !important;
+    border-color: rgba(255,255,255,0.1) !important;
+    color: #e2e8f0 !important;
+}
+body.dark-mode .form-control::placeholder {
+    color: #64748b !important;
+}
+body.dark-mode .form-control:focus {
+    background-color: #2a3650 !important;
+    border-color: #4d9fff !important;
+    box-shadow: 0 0 0 3px rgba(77,159,255,0.2) !important;
+    color: #e2e8f0 !important;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+body.dark-mode .btn-outline-primary {
+    color: #4d9fff !important;
+    border-color: #4d9fff !important;
+}
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #4d9fff !important;
+    color: #fff !important;
+}
+body.dark-mode .btn-dark {
+    background-color: #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    color: #121826 !important;
+}
+body.dark-mode .btn-outline-light {
+    border-color: rgba(255,255,255,0.3) !important;
+    color: #cbd5e1 !important;
+}
+body.dark-mode .btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* ── Team carousel ───────────────────────────────────────────────── */
+body.dark-mode .team-item {
+    background-color: #1c2333;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+body.dark-mode .owl-nav button {
+    color: #e2e8f0 !important;
+    background: rgba(255,255,255,0.08) !important;
+}
+
+/* ── Contact info cards ──────────────────────────────────────────── */
+body.dark-mode .container-fluid + .container .bg-white,
+body.dark-mode .col-lg-4 .bg-white {
+    background-color: #1c2333 !important;
+}
+
+/* ── Cookie banner ───────────────────────────────────────────────── */
+body.dark-mode #cookie-banner {
+    background: #1c2333 !important;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Back to top button ──────────────────────────────────────────── */
+body.dark-mode .back-to-top {
+    background-color: #4d9fff !important;
+    border-color: #4d9fff !important;
+}
+
+/* ── f8f9fa grey section backgrounds ─────────────────────────────
+ * These are set as inline styles in the HTML so CSS attribute
+ * selectors won't reliably match. The JS dark-mode function also
+ * toggles a .dm-section class on these elements as a hook.
+ */
+body.dark-mode .dm-section {
+    background-color: #1a2030 !important;
+}
+
+/* ── Scroll progress bar — brighter in dark mode ─────────────────── */
+body.dark-mode #nav-progress {
+    background: #4d9fff;
+}
+
+/* ── About page hero (yellow gradient section) ───────────────────── */
+body.dark-mode .about-hero {
+    background: linear-gradient(115deg, #1a2540 0%, #0f1729 100%) !important;
+}
+body.dark-mode .about-hero .hero-card {
+    background: #1c2333 !important;
+    color: #e2e8f0 !important;
+}
+body.dark-mode .about-hero .hero-card li {
+    color: #cbd5e1 !important;
+}
+body.dark-mode .about-hero h1,
+body.dark-mode .about-hero p {
+    color: #e2e8f0 !important;
+}
+body.dark-mode .about-hero .pill.badge-yo {
+    background: rgba(255,255,255,0.1) !important;
+    color: #e2e8f0 !important;
+}
+
+/* ── About page cards (feature-card, roadmap, signal, cta-panel) ─── */
+body.dark-mode .feature-card,
+body.dark-mode .roadmap,
+body.dark-mode .signal,
+body.dark-mode .cta-panel,
+body.dark-mode .leader-card {
+    background-color: #1c2333 !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4) !important;
+}
+body.dark-mode .milestone {
+    border-left-color: #4d9fff !important;
+}
+body.dark-mode .milestone small {
+    color: #64748b !important;
+}
+body.dark-mode .brand-divider {
+    background: #4d9fff !important;
+}
+body.dark-mode .pill.badge-yo {
+    background: rgba(255,255,255,0.08) !important;
+    color: #cbd5e1 !important;
+    border-color: rgba(255,255,255,0.12) !important;
+}
+body.dark-mode .feature-icon {
+    color: #4d9fff !important;
+}
+
+/* ── iframe (Google Maps) ─────────────────────────────────────────── */
+body.dark-mode iframe {
+    filter: invert(0.9) hue-rotate(180deg);
+    opacity: 0.85;
+}
+
+/* ── Prefers reduced motion: skip colour transitions ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+    body, *, *::before, *::after {
+        transition: none !important;
+    }
+}

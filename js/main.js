@@ -187,3 +187,101 @@
     /* Run once on load in case page is refreshed mid-scroll */
     onScroll();
 })();
+
+/* ── Dark mode — toggle + localStorage persistence ───────────────────
+ *
+ * Runs as a standalone IIFE before DOMContentLoaded so the class is
+ * applied to <body> BEFORE first paint — eliminates the flash of
+ * light mode on dark-mode pages.
+ *
+ * Logic:
+ *  1. On script parse: read localStorage. If "dark", add .dark-mode to
+ *     <body> immediately (no paint flash).
+ *  2. On DOMContentLoaded: find all toggle buttons, set correct icon,
+ *     tag grey-background sections with .dm-section, wire up clicks.
+ *  3. On toggle click: flip the class, persist to localStorage, rotate
+ *     icon with a brief spin animation, update all button icons.
+ *  4. Also respects the user's OS preference (prefers-color-scheme)
+ *     on first visit if no localStorage value is set yet.
+ *
+ * Buttons used:
+ *   #darkToggle       — desktop button (d-none d-lg-flex area)
+ *   #darkToggleMobile — mobile button (next to hamburger)
+ * ─────────────────────────────────────────────────────────────────── */
+(function () {
+
+    /* ── Step 1: Apply saved preference BEFORE first paint ───────── */
+    var stored = localStorage.getItem("igenDarkMode");
+
+    /* First visit: check OS preference */
+    if (stored === null) {
+        stored = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ? "dark" : "light";
+    }
+
+    if (stored === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    /* ── Step 2: Wire up after DOM is ready ──────────────────────── */
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var isDark = document.body.classList.contains("dark-mode");
+
+        /* Tag grey-background sections so CSS .dm-section rule targets them.
+         * These use inline style="background: #f8f9fa" in the HTML. */
+        document.querySelectorAll('[style*="background: #f8f9fa"], [style*="background:#f8f9fa"]')
+            .forEach(function (el) { el.classList.add("dm-section"); });
+
+        /* Gather all toggle buttons on this page */
+        function getAllToggles() {
+            return document.querySelectorAll(".dm-toggle");
+        }
+
+        /* Set the correct icon (moon = light mode, sun = dark mode) */
+        function syncIcons(dark) {
+            getAllToggles().forEach(function (btn) {
+                var icon = btn.querySelector(".fa");
+                if (!icon) return;
+                if (dark) {
+                    icon.classList.remove("fa-moon");
+                    icon.classList.add("fa-sun");
+                } else {
+                    icon.classList.remove("fa-sun");
+                    icon.classList.add("fa-moon");
+                }
+            });
+        }
+
+        /* Apply or remove dark mode */
+        function applyDark(dark) {
+            if (dark) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("igenDarkMode", "dark");
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("igenDarkMode", "light");
+            }
+            syncIcons(dark);
+        }
+
+        /* Brief spin animation on the clicked button */
+        function spinButton(btn) {
+            btn.classList.add("spinning");
+            setTimeout(function () { btn.classList.remove("spinning"); }, 400);
+        }
+
+        /* Wire click on every toggle button */
+        getAllToggles().forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var nowDark = !document.body.classList.contains("dark-mode");
+                spinButton(btn);
+                applyDark(nowDark);
+            });
+        });
+
+        /* Set initial icon state */
+        syncIcons(isDark);
+    });
+
+})();
