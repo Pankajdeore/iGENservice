@@ -1,1 +1,60 @@
+# ─────────────────────────────────────────────
+# iGEN Website — .gitignore
+# ─────────────────────────────────────────────
+
+# ── OS files ─────────────────────────────────
 .DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── JetBrains IDE (WebStorm, IntelliJ, etc.) ─
+# NOTE: The .idea/ folder is currently committed
+# to the repo. You should remove it:
+#   git rm -r --cached .idea/
+#   git commit -m "remove .idea from tracking"
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ── VS Code ───────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ── Node / npm (if you ever add a build step) ─
+node_modules/
+npm-debug.log*
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ── SCSS compilation output ───────────────────
+# Keep compiled CSS (css/style.css) in the repo
+# so the site works without a build step.
+# Only ignore the SCSS sourcemap files.
+scss/.sass-cache/
+*.css.map
+
+# ── Temp / backup files ───────────────────────
+*.tmp
+*.bak
+*.swp
+*~
+
+# ── Sensitive / env files ─────────────────────
+.env
+.env.*
+*.env
+secrets.json
+
+# ── Build / dist output (future use) ─────────
+dist/
+build/
+_site/
+
+# ── Logs ─────────────────────────────────────
+*.log
+logs/
