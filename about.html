@@ -83,11 +83,12 @@
 <body>
 
 <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
-<div class="container-fluid bg-white position-relative">
+<!-- id="mainNav" is used by sticky-navbar JS in main.js -->
+<div id="mainNav" class="container-fluid bg-white position-relative">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
         <a href="index.html" class="navbar-brand text-secondary">
             <!-- FIX: correct path (about.html is at root, not in a subfolder) -->
-            <img src="img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
+            <img src="img/igenlogo.png" alt="iGEN Logo" class="nav-logo" style="height:60px;">
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -345,7 +346,7 @@
                 <div class="leader-role mb-2">Founder &amp; CEO</div>
                 <div class="d-flex justify-content-center">
                     <a href="https://linkedin.com/in/vrushali-deore" class="text-primary mx-2" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:org@igenservice.com" class="text-primary mx-2" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="/cdn-cgi/l/email-protection#1f706d785f76787a716c7a6d69767c7a317c7072" class="text-primary mx-2" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -396,7 +397,7 @@
             <!-- FIX: was ../contact.html — no subfolder needed -->
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
             <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c233e2b0c252b29223f293e3a252f29622f2321">[email&#160;protected]</a></p>
             <p class="mb-0">Mon – Fri: 9am – 6pm</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
@@ -440,7 +441,7 @@
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- Scripts — FIX: CDN only, no local lib/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
@@ -451,14 +452,4 @@
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/1hxxxxxx';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
--->
-</body>
-</html>
+    var s1=document.createElement("scri

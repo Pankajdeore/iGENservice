@@ -126,3 +126,64 @@
         observer.observe(el);
     });
 })();
+
+/* ── Sticky shrinking navbar ─────────────────────────────────────────
+ *
+ * Runs as a standalone IIFE — no jQuery dependency.
+ *
+ * On scroll:
+ *  1. Measures the navbar's natural height once on load.
+ *  2. Injects a #nav-placeholder <div> of the same height so the page
+ *     doesn't jump when #mainNav becomes position:fixed.
+ *  3. Toggles .nav-sticky on #mainNav based on scrollY vs navHeight.
+ *  4. Updates the #nav-progress bar width as a percentage of total
+ *     scrollable page height (nice bonus UX touch).
+ * ─────────────────────────────────────────────────────────────────── */
+(function () {
+    var nav = document.getElementById("mainNav");
+    if (!nav) return;
+
+    /* Inject a progress bar element inside the navbar */
+    var progressBar = document.createElement("div");
+    progressBar.id = "nav-progress";
+    nav.appendChild(progressBar);
+
+    /* Inject a placeholder that fills the gap when nav goes fixed */
+    var placeholder = document.createElement("div");
+    placeholder.id = "nav-placeholder";
+    nav.parentNode.insertBefore(placeholder, nav.nextSibling);
+
+    var navHeight = nav.offsetHeight;
+    placeholder.style.height = "0px";        /* starts at 0 — only used when sticky */
+    var isSticky = false;
+
+    function onScroll() {
+        var scrollY      = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPct    = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+
+        /* Update scroll progress bar */
+        progressBar.style.width = Math.min(scrollPct, 100).toFixed(1) + "%";
+
+        /* Toggle sticky class */
+        if (scrollY > navHeight && !isSticky) {
+            nav.classList.add("nav-sticky");
+            placeholder.style.height = navHeight + "px";  /* prevent jump */
+            isSticky = true;
+        } else if (scrollY <= navHeight && isSticky) {
+            nav.classList.remove("nav-sticky");
+            placeholder.style.height = "0px";
+            isSticky = false;
+        }
+    }
+
+    /* Recalculate navHeight if window is resized */
+    window.addEventListener("resize", function () {
+        if (!isSticky) navHeight = nav.offsetHeight;
+    });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    /* Run once on load in case page is refreshed mid-scroll */
+    onScroll();
+})();

@@ -229,3 +229,79 @@
         transition: none !important;
     }
 }
+
+/* ─── Sticky shrinking navbar ────────────────────────────────────────
+ *
+ * How it works:
+ *   1. #mainNav starts as a normal in-flow element (position: relative).
+ *   2. Once the user scrolls past the navbar's own height, JS adds
+ *      .nav-sticky to #mainNav.
+ *   3. .nav-sticky switches to position: fixed, adds a shadow, and
+ *      shrinks the logo and nav padding via CSS transitions.
+ *   4. A placeholder div (#nav-placeholder) is injected by JS with the
+ *      same height as the original navbar, preventing the page from
+ *      jumping when the navbar leaves the normal flow.
+ *
+ * Targeting:
+ *   - #mainNav          — outer wrapper div
+ *   - #mainNav .navbar  — the Bootstrap nav element inside it
+ *   - #mainNav .nav-logo— the logo <img> (class added to all 3 pages)
+ * ─────────────────────────────────────────────────────────────────── */
+
+/* Base transition — runs on both sticky and un-sticky states */
+#mainNav {
+    transition: box-shadow 0.3s ease, padding 0.3s ease;
+    z-index: 1030; /* above Bootstrap modals / dropdowns */
+}
+
+/* Sticky state — added by JS on scroll */
+#mainNav.nav-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    background: #fff !important;
+}
+
+/* Shrink the Bootstrap nav's vertical padding when sticky */
+#mainNav.nav-sticky .navbar {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+    transition: padding 0.3s ease;
+}
+
+/* Shrink the logo smoothly */
+#mainNav .nav-logo {
+    transition: height 0.3s ease;
+}
+#mainNav.nav-sticky .nav-logo {
+    height: 40px !important; /* shrinks from 60px → 40px */
+}
+
+/* Shrink the Contact Us button slightly when sticky */
+#mainNav.nav-sticky .btn {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+    transition: padding 0.3s ease;
+}
+
+/* Progress bar — thin coloured line at very top of sticky navbar
+   showing how far down the page the user has scrolled */
+#nav-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #007bff;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+/* On mobile the navbar is already compact — no need to shrink further */
+@media (max-width: 991px) {
+    #mainNav.nav-sticky .nav-logo {
+        height: 44px !important;
+    }
+}
