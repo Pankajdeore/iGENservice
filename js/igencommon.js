@@ -401,29 +401,109 @@
             return email;
         }
 
-        /* Fix 1: Restore all Cloudflare-obfuscated email anchors */
-        document.querySelectorAll('a.__cf_email__[data-cfemail]').forEach(function (el) {
-            var encoded = el.getAttribute('data-cfemail');
-            if (!encoded) return;
-            var email = decodeCFEmail(encoded);
-            el.textContent = email;
-            el.href = 'mailto:' + email;
-            el.removeAttribute('data-cfemail');
-            el.classList.remove('__cf_email__');
-        });
+        /* Fix 1: Restore any Cloudflare-obfuscated email anchors
+         * (safety net for cached pages or any CF edge cases) */
+        document.querySelectorAll('a.__cf_email__[data-cfemail], a[href*="cdn-cgi/l/email-protection"]')
+            .forEach(function (el) {
+                var encoded = el.getAttribute('data-cfemail');
+                /* Try decoding CF hex if present */
+                if (encoded) {
+                    var email = decodeCFEmail(encoded);
+                    el.textContent = email;
+                    el.href = 'mailto:' + email;
+                    el.style.color = 'inherit';
+                    el.removeAttribute('data-cfemail');
+                    el.classList.remove('__cf_email__');
+                } else {
+                    /* No hex — just point at the real email directly */
+                    el.href = 'mailto:org@igenservice.com';
+                    if (el.textContent.trim() === '' ||
+                        el.textContent.indexOf('[email') !== -1) {
+                        el.textContent = 'org@igenservice.com';
+                    }
+                    el.style.color = 'inherit';
+                }
+            });
 
-        /* Fix 2: Build emails from CF-proof data-u / data-d span attributes */
+        /* Also fix any CF spans nested inside anchors */
+        document.querySelectorAll('span.__cf_email__[data-cfemail]')
+            .forEach(function (el) {
+                var encoded = el.getAttribute('data-cfemail');
+                if (!encoded) return;
+                var email = decodeCFEmail(encoded);
+                var a = el.closest('a') || el.parentNode;
+                if (a && a.tagName === 'A') {
+                    a.href = 'mailto:' + email;
+                    a.textContent = email;
+                    a.style.color = 'inherit';
+                } else {
+                    el.textContent = email;
+                }
+            });
+
+        /* Fix 2: Build emails from ig-email span attributes
+         * (for pages patched before CF obfuscation was turned off) */
         document.querySelectorAll('span.ig-email[data-u][data-d]').forEach(function (el) {
-            var user   = el.getAttribute('data-u');
-            var domain = el.getAttribute('data-d');
-            var email  = user + '@' + domain;
-            /* Replace the span with a proper mailto anchor */
+            var email = el.getAttribute('data-u') + '@' + el.getAttribute('data-d');
             var a = document.createElement('a');
             a.href = 'mailto:' + email;
             a.textContent = email;
-            a.className = el.className.replace('ig-email', '').trim();
+            a.style.color = 'inherit';
             el.parentNode.replaceChild(a, el);
         });
+
+        /* Fix 3: Make any remaining plain-text email addresses clickable.
+         * Walk text nodes and wrap bare email occurrences in mailto links. */
+        (function linkPlainEmails() {
+            var EMAIL_RE = /org@igenservice\.com/gi;
+            var walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function (node) {
+                        /* Skip script, style, and already-linked content */
+                        var parent = node.parentNode;
+                        if (!parent) return NodeFilter.FILTER_REJECT;
+                        var tag = parent.tagName && parent.tagName.toUpperCase();
+                        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'A') {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        return EMAIL_RE.test(node.nodeValue)
+                            ? NodeFilter.FILTER_ACCEPT
+                            : NodeFilter.FILTER_SKIP;
+                    }
+                },
+                false
+            );
+            var nodes = [];
+            var n;
+            EMAIL_RE.lastIndex = 0;
+            while ((n = walker.nextNode())) { nodes.push(n); }
+
+            nodes.forEach(function (textNode) {
+                var text = textNode.nodeValue;
+                EMAIL_RE.lastIndex = 0;
+                if (!EMAIL_RE.test(text)) return;
+                EMAIL_RE.lastIndex = 0;
+                var frag = document.createDocumentFragment();
+                var last = 0, m;
+                while ((m = EMAIL_RE.exec(text)) !== null) {
+                    if (m.index > last) {
+                        frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+                    }
+                    var a = document.createElement('a');
+                    a.href = 'mailto:org@igenservice.com';
+                    a.textContent = 'org@igenservice.com';
+                    a.style.color = 'inherit';
+                    frag.appendChild(a);
+                    last = m.index + m[0].length;
+                }
+                if (last < text.length) {
+                    frag.appendChild(document.createTextNode(text.slice(last)));
+                }
+                textNode.parentNode.replaceChild(frag, textNode);
+            });
+        })();
 
     }); /* end DOMContentLoaded */
 

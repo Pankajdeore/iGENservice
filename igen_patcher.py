@@ -7,6 +7,44 @@ Usage:
 import sys
 import re
 
+
+MAILTO_LINK = '<a href="mailto:org@igenservice.com" style="color:inherit;">org@igenservice.com</a>'
+
+def fix_all_emails(html):
+    """Replace every form of the iGEN email with a clean mailto: link."""
+    # a. CF-encoded anchor: <a href="/cdn-cgi/...">...[email protected]...</a>
+    html = re.sub(
+        r'<a\s+href="[^"]*cdn-cgi/l/email-protection[^"]*"[^>]*>.*?</a>',
+        MAILTO_LINK, html, flags=re.DOTALL | re.IGNORECASE
+    )
+    # Also handle CF span inside anchor: <a href="..."><span class="__cf_email__"...></span></a>
+    html = re.sub(
+        r'<a\s+[^>]*><span\s+class="__cf_email__"[^>]*>.*?</span>\s*</a>',
+        MAILTO_LINK, html, flags=re.DOTALL | re.IGNORECASE
+    )
+    # b. Old ig-email span from previous patcher
+    html = re.sub(
+        r'<span\s+class="ig-email"[^>]*data-u="org"[^>]*data-d="igenservice\.com"[^>]*>\s*</span>',
+        MAILTO_LINK, html, flags=re.IGNORECASE
+    )
+    # c. Standalone mailto: href without visible text (href only)
+    html = re.sub(
+        r'href="mailto:org@igenservice\.com"',
+        'href="mailto:org@igenservice.com" style="color:inherit;"',
+        html, flags=re.IGNORECASE
+    )
+    # d. Plain bare email text not already inside an attribute value
+    html = re.sub(
+        r'(?<![=\'\"])org@igenservice\.com(?![\'"\w])',
+        MAILTO_LINK, html, flags=re.IGNORECASE
+    )
+    # e. Flatten any double-nested mailto anchors created by multi-pass
+    html = re.sub(
+        r'<a href="mailto:org@igenservice\.com"[^>]*>\s*<a href="mailto:org@igenservice\.com"[^>]*>([^<]+)</a>\s*</a>',
+        MAILTO_LINK, html, flags=re.IGNORECASE
+    )
+    return html
+
 MODE = sys.argv[1]   # "sub" or "root"
 path = sys.argv[2]
 
@@ -15,10 +53,13 @@ with open(path, "r", encoding="utf-8", errors="replace") as f:
 
 # ─── ROOT MODE: only swap main.js reference ────────────────────────
 if MODE == "root":
+    # Swap main.js → igencommon.js
     src = src.replace(
         '<script src="js/main.js"></script>',
         '<script src="js/igencommon.js"></script>'
     )
+    # Apply email fix to root pages too
+    src = fix_all_emails(src)
     with open(path, "w", encoding="utf-8") as f:
         f.write(src)
     sys.exit(0)
@@ -136,53 +177,10 @@ if "privacy.html" not in src:
         src, count=1
     )
 
-# 12. EMAIL FIX — bypass Cloudflare Email Obfuscation
-#
-# Cloudflare scans HTML for plain email addresses and replaces them
-# with encoded anchors like:
-#   <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-#      data-cfemail="HEX">[email protected]</a>
-#
-# Strategy: replace all forms of the plain email with a data-attribute
-# span that Cloudflare cannot detect. igencommon.js then assembles it
-# into a proper mailto link at runtime.
-#
-# CF-proof span format:
-#   <span class="ig-email" data-u="org" data-d="igenservice.com"></span>
-#
-# NOTE: The permanent fix is to also disable Email Obfuscation in the
-# Cloudflare dashboard: Websites → domain → Scrape Shield →
-# Email Address Obfuscation → OFF.
-
-EMAIL_SPAN = (
-    '<span class="ig-email" data-u="org" data-d="igenservice.com"></span>'
-)
-
-# 12a. Replace mailto: href links that also show the email as text
-# Matches: <a href="mailto:org@igenservice.com">org@igenservice.com</a>
-src = re.sub(
-    r'<a\s+href="mailto:org@igenservice\.com"[^>]*>\s*org@igenservice\.com\s*</a>',
-    EMAIL_SPAN,
-    src,
-    flags=re.IGNORECASE
-)
-
-# 12b. Replace standalone mailto: href (link text may differ)
-src = re.sub(
-    r'href="mailto:org@igenservice\.com"',
-    'href="#" class="ig-email" data-u="org" data-d="igenservice.com"',
-    src,
-    flags=re.IGNORECASE
-)
-
-# 12c. Replace any remaining bare email text not inside a tag attribute
-# Uses a lookbehind/lookahead to avoid touching values already inside quotes
-src = re.sub(
-    r'(?<!=")org@igenservice\.com(?!")',
-    EMAIL_SPAN,
-    src,
-    flags=re.IGNORECASE
-)
+# 12. EMAIL FIX
+# Now that Cloudflare Email Obfuscation is OFF, use a plain mailto: link.
+# Also handles any ig-email spans from previous patcher runs.
+src = fix_all_emails(src)
 
 with open(path, "w", encoding="utf-8") as f:
     f.write(src)
