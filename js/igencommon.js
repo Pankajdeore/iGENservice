@@ -366,6 +366,65 @@
             if (cb) cb.style.display = "flex";
         }
 
+        /* ── l. EMAIL FIX ──────────────────────────────────────────────
+         *
+         * TWO problems solved here:
+         *
+         * Problem 1 — Cloudflare Email Obfuscation
+         *   Cloudflare replaces plain email addresses in HTML with an
+         *   encoded anchor: <a href="/cdn-cgi/l/email-protection"
+         *   class="__cf_email__" data-cfemail="HEX">[email protected]</a>
+         *   This decoder reverses the XOR encoding and restores the
+         *   original email text and mailto: href.
+         *
+         *   Algorithm: first byte of hex = XOR key.
+         *   Each subsequent byte pair XORed with key = character code.
+         *
+         * Problem 2 — CF-proof email spans (data-u + data-d attributes)
+         *   The patch script replaces plain email text in HTML with:
+         *   <span class="ig-email" data-u="org" data-d="igenservice.com"></span>
+         *   Cloudflare cannot detect email addresses in data attributes,
+         *   so these pass through untouched. This function assembles them.
+         *
+         * NOTE: The permanent fix is to disable Email Obfuscation in the
+         * Cloudflare dashboard: Websites → your domain → Scrape Shield
+         * → Email Address Obfuscation → OFF.
+         * ─────────────────────────────────────────────────────────────── */
+
+        /* Decode a Cloudflare-encoded email hex string */
+        function decodeCFEmail(hex) {
+            var key = parseInt(hex.slice(0, 2), 16);
+            var email = '';
+            for (var i = 2; i < hex.length; i += 2) {
+                email += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16) ^ key);
+            }
+            return email;
+        }
+
+        /* Fix 1: Restore all Cloudflare-obfuscated email anchors */
+        document.querySelectorAll('a.__cf_email__[data-cfemail]').forEach(function (el) {
+            var encoded = el.getAttribute('data-cfemail');
+            if (!encoded) return;
+            var email = decodeCFEmail(encoded);
+            el.textContent = email;
+            el.href = 'mailto:' + email;
+            el.removeAttribute('data-cfemail');
+            el.classList.remove('__cf_email__');
+        });
+
+        /* Fix 2: Build emails from CF-proof data-u / data-d span attributes */
+        document.querySelectorAll('span.ig-email[data-u][data-d]').forEach(function (el) {
+            var user   = el.getAttribute('data-u');
+            var domain = el.getAttribute('data-d');
+            var email  = user + '@' + domain;
+            /* Replace the span with a proper mailto anchor */
+            var a = document.createElement('a');
+            a.href = 'mailto:' + email;
+            a.textContent = email;
+            a.className = el.className.replace('ig-email', '').trim();
+            el.parentNode.replaceChild(a, el);
+        });
+
     }); /* end DOMContentLoaded */
 
 })();
