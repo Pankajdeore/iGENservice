@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # ════════════════════════════════════════════════════════════════════
-# patch-subpages.sh — iGEN website universal fix patcher  v3
+# patch-subpages.sh — iGEN website universal fix patcher  v4
 # ════════════════════════════════════════════════════════════════════
 # Run from the ROOT of your iGENservice repo:
 #   chmod +x patch-subpages.sh
 #   ./patch-subpages.sh
 #
 # Requires: python3 + igen_patcher.py in the same folder.
-# Safe to re-run — skips already-patched files.
+#
+# Skip condition: file already has id="darkToggle" in the HTML.
+# This means pages patched by an older version (which only had
+# igencommon.js but no toggle buttons) will be re-processed.
 # ════════════════════════════════════════════════════════════════════
 
 set -euo pipefail
@@ -22,21 +25,22 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PATCHER="$SCRIPT_DIR/igen_patcher.py"
 
 if [ ! -f "$PATCHER" ]; then
-    echo -e "${RED}ERROR: igen_patcher.py not found at $PATCHER${NC}"
-    echo "Put igen_patcher.py in the same folder as this script."; exit 1
+    echo -e "${RED}ERROR: igen_patcher.py not found.${NC}"; exit 1
 fi
 
 SUBFOLDERS=("services" "technology" "coe")
 PATCHED=0; SKIPPED=0
 
 echo ""; echo "═══════════════════════════════════════════"
-echo "  iGEN website — universal patch script v3"
+echo "  iGEN website — universal patch script v4"
 echo "═══════════════════════════════════════════"; echo ""
 
 patch_subpage() {
     local FILE="$1"
-    if grep -q "igencommon.js" "$FILE" 2>/dev/null; then
-        echo -e "  ${YELLOW}SKIP${NC}  $FILE  (already patched)"
+    # Skip only if dark toggle is already in the HTML
+    # (older patches only had igencommon.js — those will be re-processed)
+    if grep -q 'id="darkToggle"' "$FILE" 2>/dev/null; then
+        echo -e "  ${YELLOW}SKIP${NC}  $FILE  (fully patched)"
         (( SKIPPED++ )) || true; return
     fi
     echo -e "  ${GREEN}PATCH${NC} $FILE"
@@ -47,8 +51,16 @@ patch_subpage() {
 patch_root() {
     local FILE="$1"
     if grep -q "igencommon.js" "$FILE" 2>/dev/null; then
-        echo -e "  ${YELLOW}SKIP${NC}  $FILE  (already patched)"
-        (( SKIPPED++ )) || true; return
+        # Root pages: also re-run if email is still plain text
+        if grep -q 'org@igenservice\.com[^<]*<' "$FILE" 2>/dev/null; then
+            echo -e "  ${GREEN}PATCH${NC} $FILE  (root — email fix)"
+            python3 "$PATCHER" root "$FILE"
+            (( PATCHED++ )) || true
+        else
+            echo -e "  ${YELLOW}SKIP${NC}  $FILE  (root — already patched)"
+            (( SKIPPED++ )) || true
+        fi
+        return
     fi
     grep -q "js/main.js" "$FILE" 2>/dev/null || return 0
     echo -e "  ${GREEN}PATCH${NC} $FILE  (root)"
@@ -79,11 +91,7 @@ done
 echo ""; echo "═══════════════════════════════════════════"
 printf "  Done.  Patched: ${GREEN}%d${NC}   Skipped: ${YELLOW}%d${NC}\n" "$PATCHED" "$SKIPPED"
 echo "═══════════════════════════════════════════"; echo ""
-echo "IMPORTANT: Also disable Cloudflare Email Obfuscation:"
-echo "  Cloudflare dashboard → your domain → Scrape Shield"
-echo "  → Email Address Obfuscation → OFF"
-echo ""
 echo "Next steps:"
 echo "  git add -A"
-echo '  git commit -m "Fix emails, CDN libs, dark mode, sticky nav, footer"'
+echo '  git commit -m "Fix dark mode toggle consistency across all subfolders"'
 echo "  git push"; echo ""

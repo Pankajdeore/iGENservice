@@ -82,15 +82,18 @@
 
 <body>
     <!-- Navbar Start (matched to cloud-engineering) -->
-    <div class="container-fluid bg-white position-relative">
+    <div id="mainNav" class="container-fluid bg-white position-relative">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
             <a href="../index.html" class="navbar-brand text-secondary">
                 <picture>
   <source srcset="../img/igenlogo.webp" type="image/webp">
-  <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
+  <img src="../img/igenlogo.png" alt="iGEN Logo" class="nav-logo" style="height:60px;">
 </picture>
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            
+        <!-- Dark mode toggle — mobile -->
+        <button id="darkToggleMobile" class="dm-toggle d-lg-none" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -141,6 +144,8 @@
                 
                 
                 <div class="d-none d-lg-flex align-items-center pl-4">
+                <!-- Dark mode toggle — desktop -->
+                <button id="darkToggle" class="dm-toggle mr-3" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
                     <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
                     <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius: 25px;">
                         Contact Us
@@ -360,7 +365,7 @@
                 <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
                 <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="mailto:org@igenservice.com" style="color:inherit;">org@igenservice.com</a></p>
                 <p class="mb-0">Mon - Fri: 9am - 6pm</p>
             </div>
             <!-- Quick Links -->
