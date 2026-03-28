@@ -95,12 +95,21 @@
     <div style="position:absolute;top:-80px;right:-120px;width:420px;height:420px;background:rgba(255,255,255,0.07);border-radius:50%;z-index:1;"></div>
     <div class="row mx-0" style="position:relative;z-index:2;">
         <div class="col-lg-6 px-md-5 text-center text-lg-left">
-            <h1 class="display-2 font-weight-bold mb-3" style="letter-spacing:1px; color:#111;">
-                Welcome to <span style="color:#0b0b09;">iGEN</span>
+            <!-- Eyebrow line -->
+            <p class="hero-eyebrow">Your trusted IT partner</p>
+
+            <!-- Static title -->
+            <h1 class="hero-title font-weight-bold mb-0" style="letter-spacing:1px; color:#111;">
+                Welcome to iGEN —
             </h1>
-            <h2 class="mb-4" style="font-size:1.7rem;font-weight:400; color:#111;">
-                Your Trusted IT Partner for Digital Transformation
-            </h2>
+
+            <!-- Typewriter line -->
+            <div class="hero-typewriter-wrap mb-4">
+                <span class="hero-prefix">We do</span>
+                <span class="hero-typed" id="typed-word"></span>
+                <span class="hero-cursor" id="tw-cursor"></span>
+            </div>
+
             <p class="lead mb-4" style="font-size:1.15rem; color:#222;">
                 We deliver cutting-edge IT solutions tailored to your business needs. From managed services and cybersecurity to cloud and AI, iGEN empowers you to thrive in a digital world. Focus on growth — let us handle the tech.
             </p>
@@ -373,7 +382,7 @@
             <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
             <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="711e0316311816141f021403071812145f121e1c">[email&#160;protected]</a></p>
             <p class="mb-0">Mon – Fri: 9am – 6pm</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
@@ -423,13 +432,52 @@
 
 <!-- ═══════════════════════════════ SCRIPTS ══════════════════════════════ -->
 <!-- FIX: All lib/ local paths replaced with CDN equivalents -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 <!-- Site JS -->
 <script src="js/main.js"></script>
+
+<!-- ═══ Typewriter hero animation ═══════════════════════════════════════
+     Cycles through iGEN service keywords in the hero headline.
+     To change words: edit the `words` array below.
+     To change speed: edit TYPE (ms per char), DEL, PAUSE_FULL, PAUSE_EMPTY.
+-->
+<script>
+(function () {
+    var words       = ['DevOps.', 'Cloud.', 'GenAI.', 'Engineering.', 'Testing.', 'Analytics.', 'Security.', 'CX.'];
+    var el          = document.getElementById('typed-word');
+    if (!el) return;
+    var wi = 0, ci = 0, deleting = false;
+    var TYPE        = 90;    /* ms per character while typing   */
+    var DEL         = 55;    /* ms per character while deleting */
+    var PAUSE_FULL  = 1800;  /* ms to pause on completed word   */
+    var PAUSE_EMPTY = 300;   /* ms to pause before next word    */
+
+    function tick() {
+        var word = words[wi];
+        if (!deleting) {
+            el.textContent = word.slice(0, ++ci);
+            if (ci === word.length) {
+                deleting = true;
+                return setTimeout(tick, PAUSE_FULL);
+            }
+            setTimeout(tick, TYPE + Math.random() * 40); /* slight jitter = human feel */
+        } else {
+            el.textContent = word.slice(0, --ci);
+            if (ci === 0) {
+                deleting = false;
+                wi = (wi + 1) % words.length;
+                return setTimeout(tick, PAUSE_EMPTY);
+            }
+            setTimeout(tick, DEL);
+        }
+    }
+    setTimeout(tick, 900); /* delay so page renders first */
+})();
+</script>
 
 <!-- ═══ Tawk.to Live Chat ═══
      SETUP INSTRUCTIONS:
@@ -443,15 +491,4 @@
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/1hxxxxxx';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
--->
-
-</body>
-</html>
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("scri

@@ -98,3 +98,82 @@
     color: #007bff !important;
     font-weight: 500;
 }
+
+/* ─── Typewriter hero animation ──────────────────────────────────── */
+/*
+ * Used only on index.html hero section.
+ * .hero-eyebrow         — small muted line above the title
+ * .hero-title           — static "Welcome to iGEN —" line
+ * .hero-typewriter-wrap — flex row: prefix + typed word + cursor
+ * .hero-typed           — the changing word with dark pill bg
+ * .hero-cursor          — blinking caret
+ */
+.hero-eyebrow {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.hero-typewriter-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    min-height: 1.25em;
+}
+
+.hero-prefix {
+    color: #111;
+    white-space: nowrap;
+}
+
+.hero-typed {
+    color: #fff;
+    background: #111;
+    padding: 2px 10px 4px;
+    border-radius: 6px;
+    white-space: nowrap;
+    min-width: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hero-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.82em;
+    background: #111;
+    border-radius: 2px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    animation: tw-blink 0.75s step-end infinite;
+}
+
+@keyframes tw-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* On very small screens, allow the typewriter row to wrap */
+@media (max-width: 480px) {
+    .hero-typewriter-wrap {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+}
