@@ -2,211 +2,298 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Contact Us | iGEN</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Contact iGEN, IT Solutions Contact" name="keywords">
-    <meta content="Get in touch with iGEN for innovative IT solutions" name="description">
+    <title>Contact Us | iGEN Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="iGEN contact, IT services Cumming GA, contact iGEN, IT solutions contact">
+    <meta name="description" content="Get in touch with iGEN for innovative IT solutions. Contact us by phone, email, or send a message directly through our website.">
+
     <link href="img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- FIX: CDN instead of local lib/ -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/igenfix.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-white position-relative">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand text-secondary">
-                <img src="img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
-                            <a href="services/digital.html" class="dropdown-item">Digital</a>
-                            <a href="services/devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
-                            <a href="services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
-                            <a href="services/sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
-                            <a href="services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
-                            <a href="services/data-analytics.html" class="dropdown-item">Data Analytics</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="technology/virtualization.html" class="dropdown-item">Virtualization</a>
-                            <a href="technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
-                            <a href="technology/security.html" class="dropdown-item">Security</a>
-                            <a href="technology/servicenow.html" class="dropdown-item">ServiceNow</a>
-                            <a href="technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
-                            <a href="technology/genai.html" class="dropdown-item">GenAI</a>
-                            <a href="technology/open-source.html" class="dropdown-item">Open Source</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COE</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="coe/enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
-                            <!-- <a href="coe/testimonial.html" class="dropdown-item">Testimonial</a> -->
-                            <a href="coe/storage.html" class="dropdown-item">Storage</a>
-                            <a href="coe/data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
-                            <a href="coe/networking-telecom.html" class="dropdown-item">Networking & Telecom</a>
-                            <a href="coe/kubernetes.html" class="dropdown-item">Kubernetes</a>
-                            <a href="coe/cloud.html" class="dropdown-item">Cloud</a>
-                        </div>
-                    </div>
 
-                    <a href="about.html" class="nav-item nav-link active">About Us</a>
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<div class="container-fluid bg-white position-relative">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand text-secondary">
+            <img src="img/igenlogo.png" alt="iGEN Logo" style="height:60px;">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
+                        <a href="services/digital.html" class="dropdown-item">Digital</a>
+                        <a href="services/devops-consulting.html" class="dropdown-item">DevOps Consulting &amp; Services</a>
+                        <a href="services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
+                        <a href="services/sustaining-support.html" class="dropdown-item">Sustaining &amp; Support</a>
+                        <a href="services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
+                        <a href="services/data-analytics.html" class="dropdown-item">Data Analytics</a>
+                    </div>
                 </div>
-                <div class="d-none d-lg-flex align-items-center pl-4">
-                    <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
-                    <a href="contact.html" class="btn btn-primary px-4 py-2 active" style="border-radius: 25px;">
-                        Contact Us
-                    </a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="technology/virtualization.html" class="dropdown-item">Virtualization</a>
+                        <a href="technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
+                        <a href="technology/security.html" class="dropdown-item">Security</a>
+                        <a href="technology/servicenow.html" class="dropdown-item">ServiceNow</a>
+                        <a href="technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
+                        <a href="technology/genai.html" class="dropdown-item">GenAI</a>
+                        <a href="technology/open-source.html" class="dropdown-item">Open Source</a>
+                    </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COE</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="coe/enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
+                        <a href="coe/storage.html" class="dropdown-item">Storage</a>
+                        <a href="coe/data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
+                        <a href="coe/networking-telecom.html" class="dropdown-item">Networking &amp; Telecom</a>
+                        <a href="coe/kubernetes.html" class="dropdown-item">Kubernetes</a>
+                        <a href="coe/cloud.html" class="dropdown-item">Cloud</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
             </div>
-        </nav>
+            <div class="d-none d-lg-flex align-items-center pl-4">
+                <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
+                <!-- FIX: active class removed from button; current page is determined by JS -->
+                <a href="contact.html" class="btn btn-primary px-4 py-2" style="border-radius: 25px;">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- ═══════════════════════════════ NAVBAR END ═══════════════════════════ -->
+
+
+<!-- ═══════════════════════════════ PAGE HEADER ══════════════════════════ -->
+<div class="container-fluid bg-primary py-5 px-0" style="margin-bottom: 90px;">
+    <div class="row mx-0 align-items-center">
+        <div class="col-lg-8 px-md-5 text-center text-lg-left">
+            <h1 class="display-2 text-uppercase mb-3" style="color:#111;">Contact Us</h1>
+            <p class="lead mb-4" style="color:#222;">
+                Get in touch with our team to discuss how we can help transform your business with innovative IT solutions.
+            </p>
+        </div>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- ═══════════════════════════════ PAGE HEADER END ═══════════════════════ -->
 
-    <!-- Page Header -->
-    <div class="container-fluid bg-primary py-5 px-0" style="margin-bottom: 90px;">
-        <div class="row mx-0 align-items-center">
-            <div class="col-lg-6 px-md-5 text-center text-lg-left">
-                <h1 class="display-2 text-uppercase mb-3">Contact Us</h1>
-                <p class="text-dark mb-4">Get in touch with our team to discuss how we can help transform your business with innovative IT solutions.</p>
+
+<!-- ═══════════════════════════════ CONTACT INFO CARDS ═══════════════════ -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex align-items-start">
+                <div class="btn btn-primary btn-lg-square mr-3 flex-shrink-0" style="width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:8px;">
+                    <i class="fa fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Our Office</h5>
+                    <p class="mb-0 text-muted">4465 Alister Park Dr<br>Cumming GA 30040</p>
+                </div>
             </div>
-            <div class="col-lg-6 px-0 text-right">
-                <img class="img-fluid mt-5 mt-lg-0" src="img/contact-header.png" alt="">
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex align-items-start">
+                <div class="btn btn-primary btn-lg-square mr-3 flex-shrink-0" style="width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:8px;">
+                    <i class="fa fa-phone-alt"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Call Us</h5>
+                    <p class="mb-0 text-muted">+1 (678) 900-3344<br>Mon – Fri: 9am – 6pm</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex align-items-start">
+                <div class="btn btn-primary btn-lg-square mr-3 flex-shrink-0" style="width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:8px;">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Email Us</h5>
+                    <p class="mb-0 text-muted"><a href="mailto:org@igenservice.com">org@igenservice.com</a></p>
+                </div>
             </div>
         </div>
     </div>
+</div>
+<!-- ═══════════════════════════════ CONTACT INFO CARDS END ════════════════ -->
 
-    <!-- Contact Info Section -->
-    <div class="container mb-5">
+
+<!-- ═══════════════════════════════ CONTACT FORM ═════════════════════════ -->
+<div class="container-fluid py-5 px-0" style="background: #f8f9fa;">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-4 text-primary mb-3">Send Us a Message</h2>
+                <p class="lead text-secondary mb-0" style="font-size: 1.1rem;">
+                    Fill in the form below and we'll get back to you within one business day.
+                </p>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="bg-white rounded shadow p-4 h-100">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="btn-lg btn-primary btn-lg-square mr-3">
-                            <i class="fa fa-map-marker-alt"></i>
-                        </div>
-                        <h5 class="m-0">Our Office</h5>
-                    </div>
-                    <p class="mb-0">4465 Alister Park Dr Cumming GA 30040</p>
+            <!-- FIX: corrected Google Maps embed URL format -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="rounded shadow-sm overflow-hidden h-100" style="min-height: 450px;">
+                    <iframe
+                        class="w-100 h-100 border-0"
+                        src="https://maps.google.com/maps?q=4465+Alister+Park+Dr,+Cumming,+GA+30040&hl=en&z=15&output=embed"
+                        allowfullscreen=""
+                        aria-hidden="false"
+                        tabindex="0"
+                        title="iGEN Office Location — 4465 Alister Park Dr, Cumming GA 30040">
+                    </iframe>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
-                <div class="bg-white rounded shadow p-4 h-100">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="btn-lg btn-primary btn-lg-square mr-3">
-                            <i class="fa fa-phone-alt"></i>
+
+            <!-- FIX: single contact form, unique field IDs -->
+            <div class="col-lg-6">
+                <div class="contact-form bg-white rounded shadow p-4 p-md-5">
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/33e7f2bf207eb4a7d081974eea202b95">
+                        <input type="hidden" name="_subject" value="New message from iGEN website">
+                        <input type="hidden" name="_next" value="https://igenservice.com/thanks.html">
+                        <div class="form-row">
+                            <div class="form-group col-md-6 position-relative">
+                                <span class="fa fa-user position-absolute text-primary"
+                                    style="top:50%;left:15px;transform:translateY(-50%);pointer-events:none;"></span>
+                                <input name="name" type="text"
+                                    class="form-control bg-light border-0 pl-5 p-4"
+                                    id="cf-name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group col-md-6 position-relative">
+                                <span class="fa fa-envelope position-absolute text-primary"
+                                    style="top:50%;left:15px;transform:translateY(-50%);pointer-events:none;"></span>
+                                <input name="email" type="email"
+                                    class="form-control bg-light border-0 pl-5 p-4"
+                                    id="cf-email" placeholder="Your Email" required>
+                            </div>
                         </div>
-                        <h5 class="m-0">Call Us</h5>
-                    </div>
-                    <p class="mb-0">+1 (678) 900-3344</p>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="bg-white rounded shadow p-4 h-100">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="btn-lg btn-primary btn-lg-square mr-3">
-                            <i class="fa fa-envelope"></i>
+                        <div class="form-group position-relative">
+                            <span class="fa fa-tag position-absolute text-primary"
+                                style="top:50%;left:15px;transform:translateY(-50%);pointer-events:none;"></span>
+                            <input name="subject" type="text"
+                                class="form-control bg-light border-0 pl-5 p-4"
+                                id="cf-subject" placeholder="Subject" required>
                         </div>
-                        <h5 class="m-0">Email Us</h5>
-                    </div>
-                    <p class="mb-0">org@igenservice.com</p>
+                        <div class="form-group position-relative">
+                            <span class="fa fa-comment-dots position-absolute text-primary"
+                                style="top:20px;left:15px;pointer-events:none;"></span>
+                            <textarea name="message"
+                                class="form-control bg-light border-0 pl-5 py-3 px-4"
+                                rows="5" id="cf-message" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary text-uppercase py-3 px-5 shadow"
+                                type="submit" style="font-size:1.1rem;letter-spacing:1px;">
+                                <i class="fa fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- ═══════════════════════════════ CONTACT FORM END ═════════════════════ -->
 
-    <!-- Contact Form Section -->
-    <div class="container-fluid py-5 px-0" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-4 text-primary mb-3">Send Us a Message</h2>
-                    <p class="lead text-secondary mb-4" style="font-size: 1.2rem;">
-                        We'd love to hear from you! Whether you have a question, want to discuss a project, or just want to say hello, our team is ready to help.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Map -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="rounded shadow-sm overflow-hidden h-100" style="min-height: 400px;">
-                        <iframe class="w-100 h-100 border-0"
-                            src="https://www.google.com/maps?q=Cumming,+GA&output=embed"
-                            allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                </div>
-                <!-- Contact Form -->
-                <div class="col-lg-6">
-                    <div class="contact-form bg-white rounded shadow p-4 p-md-5">
-                        <form name="sentMessage" id="contactForm" method ="POST" action="https://formsubmit.co/33e7f2bf207eb4a7d081974eea202b95">
-                            <!-- FormSubmit options -->
-                            <input type="hidden" name="_subject" value="New message from iGEN website">
-                            <!-- <input type="hidden" name="_captcha" value="false"> -->
-                            <!-- Use absolute URL in production; local dev example below -->
-                            <!-- <input type="hidden" name="_next" value="https://igenservice.com/thanks.html"> -->
-                            <input type="hidden" name="_next" value="https://igenservice.com/thanks.html">
 
-                            <div class="form-row">
-                                <div class="form-group col-md-6 position-relative">
-                                    <span class="fa fa-user position-absolute text-primary" style="top: 50%; left: 15px; transform: translateY(-50%);"></span>
-                                    <input name="name" type="text" class="form-control bg-light border-0 pl-5 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group col-md-6 position-relative">
-                                    <span class="fa fa-envelope position-absolute text-primary" style="top: 50%; left: 15px; transform: translateY(-50%);"></span>
-                                    <input name="email" type="email" class="form-control bg-light border-0 pl-5 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="form-group position-relative">
-                                <span class="fa fa-tag position-absolute text-primary" style="top: 50%; left: 15px; transform: translateY(-50%);"></span>
-                                <input name="subject" type="text" class="form-control bg-light border-0 pl-5 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group position-relative">
-                                <span class="fa fa-comment-dots position-absolute text-primary" style="top: 20px; left: 15px;"></span>
-                                <textarea name="message" class="form-control bg-light border-0 pl-5 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="text-center">
-                                <button class="btn btn-primary text-uppercase py-3 px-5 shadow" type="submit" id="sendMessageButton" style="font-size: 1.1rem; letter-spacing: 1px;">
-                                    <i class="fa fa-paper-plane mr-2"></i>Send Message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<!-- ═══════════════════════════════ FOOTER ══════════════════════════════ -->
+<div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="index.html" class="navbar-brand mb-3 d-block">
+                <img src="img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
+            </a>
+            <p class="mb-4">Empowering your business with innovative IT solutions and a partnership mindset.</p>
+            <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+            <div class="d-flex">
+                <a class="btn btn-outline-light btn-social mr-2" href="https://twitter.com/igenservice" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://facebook.com/igenservice" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://linkedin.com/company/igenservice" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-social" href="https://instagram.com/igenservice" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
+            <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i>org@igenservice.com</p>
+            <p class="mb-0">Mon – Fri: 9am – 6pm</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
+            <div class="d-flex flex-column">
+                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
+                <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
+                <a class="text-white-50 mb-2" href="index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
+                <a class="text-white-50 mb-2" href="index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
+                <a class="text-white-50 mb-2" href="contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                <a class="text-white-50" href="privacy.html"><i class="fa fa-angle-right text-primary mr-2"></i>Privacy Policy</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Strategic Partner Program</h4>
+            <p class="mb-4">We're in Year One and opening a few strategic partner slots to co-build platforms with direct founder access.</p>
+            <a href="contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
+            <hr class="border-secondary my-4" style="opacity:.15;">
+            <h6 class="text-uppercase text-white mb-3">Careers</h6>
+            <p class="mb-3">We're hiring early builders and platform specialists.</p>
+            <a href="contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
+        </div>
     </div>
+    <hr class="border-secondary" style="opacity:0.15;">
+    <div class="row">
+        <div class="col-12 text-center pb-3">
+            <p class="mb-1 text-white-50">&copy; <span id="yr"></span> <a href="index.html" class="text-primary">iGEN</a>. All Rights Reserved.</p>
+            <p class="mb-0 text-white-50" style="font-size:0.85rem;">Website design adapted from <a href="https://htmlcodex.com" class="text-white-50" target="_blank" rel="noopener">HTML Codex</a></p>
+        </div>
+    </div>
+</div>
+<!-- ═══════════════════════════════ FOOTER END ═══════════════════════════ -->
 
-    <!-- Footer Start -->
-    <!-- Include your existing footer code here -->
-    
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <!-- <script src="mail/jqBootstrapValidation.min.js"></script> -->
-    <!-- <script src="mail/contact.js"></script> -->
-    <script src="js/main.js"></script>
+<!-- Cookie Notice -->
+<div id="cookie-banner" style="display:none;">
+    <span>This site uses cookies and Google Maps to enhance your experience. See our <a href="privacy.html">Privacy Policy</a>.</span>
+    <button id="cookie-accept">Got it</button>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Scripts — FIX: all CDN, no local lib/ dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Tawk.to Live Chat — see index.html for setup instructions -->
+<!--
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/1hxxxxxx';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+-->
 </body>
 </html>
