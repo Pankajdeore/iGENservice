@@ -20,6 +20,16 @@ Desktop.ini
 *.iws
 *.ipr
 
+# Dev scripts — keep locally, never commit to repo
+*.py
+*.sh
+_SUBPAGE_TEMPLATE.html
+CHANGES.md
+
+# IDE folders
+.idea/
+.vscode/
+
 # ── VS Code ───────────────────────────────────
 .vscode/
 *.code-workspace
