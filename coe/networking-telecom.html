@@ -1,191 +1,296 @@
-<!-- filepath: d:\iGENservice\coe\networking-telecom.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Networking & Telecom COE - iGEN Services</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="description" content="SDN/NFV, 5G, OSS/BSS, and edge networking solutions from iGEN.">
+    <title>Networking &amp; Telecom COE | iGEN | iGEN Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Networking &amp; Telecom COE | iGEN">
     <link href="../img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <style>
-        .tech-hero{background:linear-gradient(120deg,#FFAA17 0%,#ca8000 100%);color:#222;padding:80px 0 40px;text-align:center}
-        .tech-feature{background:#fff;border-radius:12px;padding:32px 24px;margin-bottom:32px;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:box-shadow .2s}
-        .tech-feature:hover{box-shadow:0 6px 32px rgba(0,0,0,.13)}
-        .tech-icon{font-size:2.5rem;color:#FFAA17;margin-bottom:18px}
-        .tech-section-title{font-weight:700;color:#222;margin-bottom:24px;letter-spacing:1px}
-        .tech-divider{width:60px;height:4px;background:#FFAA17;margin:0 auto 32px;border-radius:2px}
-        .tech-cta{background:#fff;color:#222;border-radius:8px;padding:32px 24px;text-align:center;margin-top:48px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
-        .tech-cta .btn{font-size:1.15rem;padding:12px 36px;border-radius:25px}
-    </style>
     <link href="../css/igenfix.css" rel="stylesheet">
 </head>
 <body>
-    <div id="mainNav" class="container-fluid bg-white position-relative">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-            <a href="../index.html" class="navbar-brand text-secondary">
-                <picture>
-  <source srcset="../img/igenlogo.webp" type="image/webp">
-  <img src="../img/igenlogo.png" alt="iGEN Logo" class="nav-logo" style="height:60px;">
-</picture>
-            </a>
-            
-        <!-- Dark mode toggle — mobile -->
+<!-- ═══ NAVBAR ════════════════════════════════════════════════ -->
+<div id="mainNav" class="container-fluid bg-white position-relative">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+        <a href="../index.html" class="navbar-brand text-secondary">
+            <img src="../img/igenlogo.png" alt="iGEN Logo" class="nav-logo" style="height:60px;">
+        </a>
         <button id="darkToggleMobile" class="dm-toggle d-lg-none" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
-                    <a href="../index.html" class="nav-item nav-link">Home</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="../services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
-                            <a href="../services/digital.html" class="dropdown-item">Digital</a>
-                            <a href="../services/devops-consulting.html" class="dropdown-item">DevOps Consulting & Services</a>
-                            <a href="../services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
-                            <a href="../services/sustaining-support.html" class="dropdown-item">Sustaining & Support</a>
-                            <a href="../services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
-                            <a href="../services/data-analytics.html" class="dropdown-item">Data Analytics</a>
-                        </div>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="../services/software-product-engineering.html" class="dropdown-item">Software Product Engineering</a>
+                        <a href="../services/digital.html" class="dropdown-item">Digital</a>
+                        <a href="../services/devops-consulting.html" class="dropdown-item">DevOps Consulting &amp; Services</a>
+                        <a href="../services/managed-testing.html" class="dropdown-item">Managed Testing Services</a>
+                        <a href="../services/sustaining-support.html" class="dropdown-item">Sustaining &amp; Support</a>
+                        <a href="../services/cx-engineering.html" class="dropdown-item">CX Engineering</a>
+                        <a href="../services/data-analytics.html" class="dropdown-item">Data Analytics</a>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="../technology/virtualization.html" class="dropdown-item">Virtualization</a>
-                            <a href="../technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
-                            <a href="../technology/security.html" class="dropdown-item">Security</a>
-                            <a href="../technology/servicenow.html" class="dropdown-item">ServiceNow</a>
-                            <a href="../technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
-                            <a href="../technology/genai.html" class="dropdown-item">GenAI</a>
-                            <a href="../technology/open-source.html" class="dropdown-item">Open Source</a>
-                        </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Technology</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="../technology/virtualization.html" class="dropdown-item">Virtualization</a>
+                        <a href="../technology/cloud-engineering.html" class="dropdown-item">Cloud Engineering Solutions</a>
+                        <a href="../technology/security.html" class="dropdown-item">Security</a>
+                        <a href="../technology/servicenow.html" class="dropdown-item">ServiceNow</a>
+                        <a href="../technology/iot.html" class="dropdown-item">Internet of Things (IoT)</a>
+                        <a href="../technology/genai.html" class="dropdown-item">GenAI</a>
+                        <a href="../technology/open-source.html" class="dropdown-item">Open Source</a>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">COE</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
-                            <!-- <a href="coe/testimonial.html" class="dropdown-item">Testimonial</a> -->
-                            <a href="storage.html" class="dropdown-item">Storage</a>
-                            <a href="data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
-                            <a href="networking-telecom.html" class="dropdown-item active">Networking & Telecom</a>
-                            <a href="kubernetes.html" class="dropdown-item">Kubernetes</a>
-                            <a href="cloud.html" class="dropdown-item">Cloud</a>
-                        </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COE</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="../coe/enterprise-iot.html" class="dropdown-item">Enterprise IoT</a>
+                        <a href="../coe/storage.html" class="dropdown-item">Storage</a>
+                        <a href="../coe/data-platforms-guild.html" class="dropdown-item">Data Platforms Guild</a>
+                        <a href="../coe/networking-telecom.html" class="dropdown-item">Networking &amp; Telecom</a>
+                        <a href="../coe/kubernetes.html" class="dropdown-item">Kubernetes</a>
+                        <a href="../coe/cloud.html" class="dropdown-item">Cloud</a>
                     </div>
-                    <a href="../about.html" class="nav-item nav-link">About Us</a>
-                    <div class="d-none d-lg-flex align-items-center pl-4">
-                <!-- Dark mode toggle — desktop -->
+                </div>
+                <a href="../about.html" class="nav-item nav-link">About Us</a>
+            </div>
+            <div class="d-none d-lg-flex align-items-center pl-4">
                 <button id="darkToggle" class="dm-toggle mr-3" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
-                        <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
-                        <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius:25px;">Contact Us</a>
+                <i class="fa fa-2x fa-mobile-alt text-primary mr-3"></i>
+                <a href="../contact.html" class="btn btn-primary px-4 py-2" style="border-radius:25px;">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid bg-primary py-5 px-0" style="margin-bottom:60px;">
+    <div class="row mx-0">
+        <div class="col-lg-8 px-md-5 text-center text-lg-left">
+            <h1 class="display-3 font-weight-bold mb-3" style="color:#111;">Generative AI (GenAI) Solutions</h1>
+            <p class="lead mb-0" style="color:#222;">Unlock innovation and automation with iGEN's Generative AI solutions. We help you leverage the latest in AI to automate processes, enhance creativity, and deliver smarter customer experiences.</p>
+        </div>
+    </div>
+</div>
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-12 reveal reveal-up">
+            <h2 class="text-uppercase text-primary mb-4">Our GenAI Capabilities</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm p-4 h-100 transition">
+                        <i class="fa fa-robot fa-2x text-primary mb-3"></i>
+                        <h5 class="font-weight-bold">AI Automation</h5>
+                        <p class="mb-0">Automate repetitive tasks, streamline workflows, and boost productivity with intelligent AI-driven automation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm p-4 h-100 transition">
+                        <i class="fa fa-comments fa-2x text-primary mb-3"></i>
+                        <h5 class="font-weight-bold">Natural Language Processing</h5>
+                        <p class="mb-0">Enable smarter chatbots, virtual assistants, and content generation using advanced NLP models.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-item bg-white rounded shadow-sm p-4 h-100 transition">
+                        <i class="fa fa-paint-brush fa-2x text-primary mb-3"></i>
+                        <h5 class="font-weight-bold">Creative AI</h5>
+                        <p class="mb-0">Generate new ideas, designs, and content with AI-powered creativity tools for marketing, design, and more.</p>
                     </div>
                 </div>
             </div>
-        </nav>
-    </div>
-
-    <section class="tech-hero">
-        <div class="container">
-            <h1 class="display-4 font-weight-bold mb-3">Networking & Telecom COE</h1>
-            <p class="lead mb-4" style="max-width:760px;margin:0 auto;">Programmable, reliable networks for the edge-to-core continuum.</p>
-            <a href="#solutions" class="btn btn-dark text-uppercase px-5 py-3">Explore Solutions</a>
-        </div>
-    </section>
-
-    <div class="container py-5" id="solutions">
-        <div class="tech-section-title text-center">What We Do</div>
-        <div class="tech-divider"></div>
-        <div class="row">
-            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-network-wired tech-icon"></i><h5>SDN/NFV</h5><p>Software-defined fabrics, virtualized network functions, and automation.</p></div></div>
-            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-broadcast-tower tech-icon"></i><h5>5G & Edge</h5><p>Private 5G, MEC workloads, and edge telemetry pipelines.</p></div></div>
-            <div class="col-md-4"><div class="tech-feature h-100 text-center"><i class="fas fa-cogs tech-icon"></i><h5>OSS/BSS</h5><p>Inventory, provisioning, observability, and SLA management platforms.</p></div></div>
         </div>
     </div>
-
-    <div class="container">
-        <div class="tech-cta">
-            <h3 class="mb-3">Modernize your network with automation</h3>
-            <p class="mb-4">From design to day-2 operations with GitOps-driven networking.</p>
-            <a href="../contact.html" class="btn btn-primary font-weight-bold shadow">Engage the COE</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
-        <div class="row pt-5">
-            <!-- Logo & Social -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <a href="index.html" class="navbar-brand mb-3 d-block">
-                    <picture>
-  <source srcset="../img/igenlogo.webp" type="image/webp">
-  <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
-</picture>
-                </a>
-                <p class="mb-4" style="font-size: 1rem;">
-                    Empowering your business with innovative IT solutions and a partnership mindset.
-                </p>
-                <h6 class="text-uppercase text-white py-2">Follow Us</h6>
-                <div class="d-flex">
-                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+    <div class="row mb-5">
+        <div class="col-12 reveal reveal-up">
+            <h2 class="text-uppercase text-primary mb-4">What We Offer</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <h6 class="font-weight-bold text-primary">Custom GenAI Solutions</h6>
+                        <ul class="pl-3 mb-0 small"><li>Tailored AI models for your business</li><li>Integration with existing platforms</li><li>Data preparation &amp; training</li><li>Ongoing support &amp; optimization</li></ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <h6 class="font-weight-bold text-primary">AI in the Cloud</h6>
+                        <ul class="pl-3 mb-0 small"><li>Deploy on AWS, Azure, or GCP</li><li>Scalable, secure, cost-effective</li><li>API integration for apps</li><li>Monitoring and analytics</li></ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <h6 class="font-weight-bold text-primary">Responsible AI</h6>
+                        <ul class="pl-3 mb-0 small"><li>Ethical AI development</li><li>Bias detection &amp; mitigation</li><li>Data privacy &amp; compliance</li><li>Transparent AI practices</li></ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <h6 class="font-weight-bold text-primary">AI Consulting &amp; Training</h6>
+                        <ul class="pl-3 mb-0 small"><li>AI strategy workshops</li><li>Team enablement &amp; training</li><li>Proof-of-concept development</li><li>Continuous improvement</li></ul>
+                    </div>
                 </div>
             </div>
-            <!-- Contact Info -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="mailto:org@igenservice.com" style="color:inherit;">org@igenservice.com</a></p>
-                <p class="mb-0">Mon - Fri: 9am - 6pm</p>
+        </div>
+    </div>
+    <div class="text-center reveal reveal-up">
+        <h3 class="mb-3">Ready to Transform with GenAI?</h3>
+        <p class="mb-4">Contact iGEN to explore how Generative AI can drive innovation and efficiency for your business.</p>
+        <a href="../contact.html" class="btn btn-primary py-3 px-5 shadow"><i class="fa fa-paper-plane mr-2"></i>Get Started</a>
+    </div>
+</div>
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top:90px;">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="../index.html" class="navbar-brand mb-3 d-block">
+                <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
+            </a>
+            <p class="mb-4">Empowering your business with innovative IT solutions and a partnership mindset.</p>
+            <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+            <div class="d-flex">
+                <a class="btn btn-outline-light btn-social mr-2" href="https://twitter.com/igenservice" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://facebook.com/igenservice" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://linkedin.com/company/igenservice" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-social" href="https://instagram.com/igenservice" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <!-- Quick Links -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
-                <div class="d-flex flex-column">
-                    <a class="text-white-50 mb-2" href="../index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
-                    <a class="text-white-50 mb-2" href="../about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
-                    <a class="text-white-50 mb-2" href="../index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
-                    <!-- <a class="text-white-50 mb-2" href="pricing.html"><i class="fa fa-angle-right text-primary mr-2"></i>Pricing Plan</a> -->
-                    <a class="text-white-50 mb-2" href="../index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
-                    <a class="text-white-50" href="../contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
+            <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="mailto:org@igenservice.com" style="color:inherit;">org@igenservice.com</a></p>
+            <p class="mb-0">Mon &ndash; Fri: 9am &ndash; 6pm</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
+            <div class="d-flex flex-column">
+                <a class="text-white-50 mb-2" href="../index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
+                <a class="text-white-50 mb-2" href="../about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
+                <a class="text-white-50 mb-2" href="../index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
+                <a class="text-white-50 mb-2" href="../index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
+                <a class="text-white-50 mb-2" href="../contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
                 <a class="text-white-50" href="../privacy.html"><i class="fa fa-angle-right text-primary mr-2"></i>Privacy Policy</a>
-                </div>
-            </div>     
-            <!-- Strategic Partner Program -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-white mb-4">Strategic Partner Program</h4>
-                <p class="mb-4">We’re in Year One and opening a few strategic partner slots to co-build platforms with direct founder access.</p>
-                <a href="../contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
-                <hr class="border-secondary my-4" style="opacity:.15;">
-                <h6 class="text-uppercase text-white mb-3">Careers</h6>
-                <p class="mb-3">We’re hiring early builders and platform specialists.</p>
-                <a href="../contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
             </div>
         </div>
-        <hr class="border-secondary" style="opacity:0.15;">
-        <div class="row">
-            <div class="col-12 text-center">
-                <p class="mb-2 text-white-50">&copy; <a href="#" class="text-primary">iGEN</a>. All Rights Reserved.</p>
-        <p class="mb-0 text-white-50" style="font-size:0.85rem;">Website design adapted from <a href="https://htmlcodex.com" class="text-white-50" target="_blank" rel="noopener">HTML Codex</a></p>
-                
-            </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Strategic Partner Program</h4>
+            <p class="mb-4">We're in Year One opening strategic partner slots to co-build platforms with direct founder access.</p>
+            <a href="../contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
+            <hr class="border-secondary my-4" style="opacity:.15;">
+            <h6 class="text-uppercase text-white mb-3">Careers</h6>
+            <p class="mb-3">We're hiring early builders and platform specialists.</p>
+            <a href="../contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
         </div>
     </div>
+    <hr class="border-secondary" style="opacity:0.15;">
+    <div class="row">
+        <div class="col-12 text-center pb-3">
+            <p class="mb-1 text-white-50">&copy; <span id="yr"></span> <a href="../index.html" class="text-primary">iGEN</a>. All Rights Reserved.</p>
+            <p class="mb-0 text-white-50" style="font-size:0.85rem;">Website design adapted from <a href="https://htmlcodex.com" class="text-white-50" target="_blank" rel="noopener">HTML Codex</a></p>
+        </div>
+    </div>
+</div>
 
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<div id="cookie-banner" style="display:none;">
+    <span>This site uses cookies to enhance your experience. See our <a href="../privacy.html">Privacy Policy</a>.</span>
+    <button id="cookie-accept">Got it</button>
+</div>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="../js/igencommon.js"></script>
+</body>
+</html
+
+<div class="container-fluid bg-primary py-5 px-0" style="margin-bottom:60px;">
+    <div class="row mx-0"><div class="col-lg-8 px-md-5 text-center text-lg-left">
+        <h1 class="display-3 font-weight-bold mb-3" style="color:#111;">Networking and Telecom Center of Excellence</h1>
+        <p class="lead mb-0" style="color:#222;">Modern networking and telecom solutions for enterprise connectivity.</p>
+    </div></div>
+</div>
+<div class="container py-5">
+    <div class="row mb-5 reveal reveal-up">
+        <div class="col-md-4 mb-4"><div class="service-item bg-white rounded shadow-sm p-4 h-100 transition"><i class="fa fa-wifi fa-2x text-primary mb-3"></i><h5>Network Design</h5><p class="mb-0">SD-WAN, zero-trust networking, and hybrid connectivity architectures for modern enterprises.</p></div></div>
+        <div class="col-md-4 mb-4"><div class="service-item bg-white rounded shadow-sm p-4 h-100 transition"><i class="fa fa-phone-alt fa-2x text-primary mb-3"></i><h5>Telecom Integration</h5><p class="mb-0">Unified communications, VoIP, and telecom platform integration for seamless operations.</p></div></div>
+        <div class="col-md-4 mb-4"><div class="service-item bg-white rounded shadow-sm p-4 h-100 transition"><i class="fa fa-shield-alt fa-2x text-primary mb-3"></i><h5>Network Security</h5><p class="mb-0">Firewall management, intrusion detection, and secure remote access at enterprise scale.</p></div></div>
+    </div>
+    <div class="text-center reveal reveal-up mt-4">
+        <a href="../contact.html" class="btn btn-primary py-3 px-5 shadow"><i class="fa fa-paper-plane mr-2"></i>Talk to Our Networking Team</a>
+    </div>
+</div>
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<div class="container-fluid footer-bg text-white-50 pt-5 px-sm-3 px-md-5" style="margin-top:90px;">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="../index.html" class="navbar-brand mb-3 d-block">
+                <img src="../img/igenlogo.png" alt="iGEN Logo" style="height:48px;">
+            </a>
+            <p class="mb-4">Empowering your business with innovative IT solutions and a partnership mindset.</p>
+            <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+            <div class="d-flex">
+                <a class="btn btn-outline-light btn-social mr-2" href="https://twitter.com/igenservice" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://facebook.com/igenservice" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mr-2" href="https://linkedin.com/company/igenservice" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-social" href="https://instagram.com/igenservice" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-2"></i>4465 Alister Park Dr Cumming GA 30040</p>
+            <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-2"></i>+1 (678) 900-3344</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-2"></i><a href="mailto:org@igenservice.com" style="color:inherit;">org@igenservice.com</a></p>
+            <p class="mb-0">Mon &ndash; Fri: 9am &ndash; 6pm</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Quick Links</h4>
+            <div class="d-flex flex-column">
+                <a class="text-white-50 mb-2" href="../index.html"><i class="fa fa-angle-right text-primary mr-2"></i>Home</a>
+                <a class="text-white-50 mb-2" href="../about.html"><i class="fa fa-angle-right text-primary mr-2"></i>About Us</a>
+                <a class="text-white-50 mb-2" href="../index.html#services"><i class="fa fa-angle-right text-primary mr-2"></i>Our Services</a>
+                <a class="text-white-50 mb-2" href="../index.html#team"><i class="fa fa-angle-right text-primary mr-2"></i>Meet The Team</a>
+                <a class="text-white-50 mb-2" href="../contact.html"><i class="fa fa-angle-right text-primary mr-2"></i>Contact Us</a>
+                <a class="text-white-50" href="../privacy.html"><i class="fa fa-angle-right text-primary mr-2"></i>Privacy Policy</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Strategic Partner Program</h4>
+            <p class="mb-4">We're in Year One opening strategic partner slots to co-build platforms with direct founder access.</p>
+            <a href="../contact.html" class="btn btn-primary text-uppercase px-3">Become a Partner</a>
+            <hr class="border-secondary my-4" style="opacity:.15;">
+            <h6 class="text-uppercase text-white mb-3">Careers</h6>
+            <p class="mb-3">We're hiring early builders and platform specialists.</p>
+            <a href="../contact.html" class="text-white-50"><i class="fa fa-angle-right text-primary mr-2"></i>Send Your Profile</a>
+        </div>
+    </div>
+    <hr class="border-secondary" style="opacity:0.15;">
+    <div class="row">
+        <div class="col-12 text-center pb-3">
+            <p class="mb-1 text-white-50">&copy; <span id="yr"></span> <a href="../index.html" class="text-primary">iGEN</a>. All Rights Reserved.</p>
+            <p class="mb-0 text-white-50" style="font-size:0.85rem;">Website design adapted from <a href="https://htmlcodex.com" class="text-white-50" target="_blank" rel="noopener">HTML Codex</a></p>
+        </div>
+    </div>
+</div>
+
+<div id="cookie-banner" style="display:none;">
+    <span>This site uses cookies to enhance your experience. See our <a href="../privacy.html">Privacy Policy</a>.</span>
+    <button id="cookie-accept">Got it</button>
+</div>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="../js/igencommon.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="../js/igencommon.js"></script>
 </body>
 </html>
