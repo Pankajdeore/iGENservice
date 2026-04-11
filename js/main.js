@@ -125,6 +125,13 @@
     revealEls.forEach(function (el) {
         observer.observe(el);
     });
+
+    /* Safety net: force-reveal any remaining hidden elements after 2.5s */
+    setTimeout(function () {
+        document.querySelectorAll(".reveal:not(.revealed)").forEach(function (el) {
+            el.classList.add("revealed");
+        });
+    }, 2500);
 })();
 
 /* ── Sticky shrinking navbar ─────────────────────────────────────────

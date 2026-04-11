@@ -340,6 +340,15 @@
                     });
                 }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
                 revealEls.forEach(function (el) { observer.observe(el); });
+
+                /* Safety net: force-reveal any remaining hidden elements after 2.5s
+                 * in case IntersectionObserver misses them (e.g. very short pages,
+                 * or elements already in viewport on load). */
+                setTimeout(function () {
+                    document.querySelectorAll(".reveal:not(.revealed)").forEach(function (el) {
+                        el.classList.add("revealed");
+                    });
+                }, 2500);
             }
         }
 

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block dev/internal files from being indexed
+Disallow: /thanks.html
+Disallow: /coming-soon.html
+
+# Sitemap location
+Sitemap: https://www.igenservice.com/sitemap.xml
